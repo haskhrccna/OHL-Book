@@ -1,0 +1,96 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>A line is a chain of components, and one failure can cost the whole transfer capacity. Modern design treats loads and strengths as statistics: a load with return period T<sub>r</sub> meets a strength with a 10 % exclusion limit, which gives a yearly failure probability between 1/T<sub>r</sub> and 1/(2T<sub>r</sub>). Strengths are then coordinated so the failure you can live with happens first: a suspension tower. Wind, ice and their combination come from measured statistics through standards that differ, sometimes a lot.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">Loads drive tower weight, foundation size and conductor tension, so they drive cost. The choice of reliability level and wind model changes tower moments by more than 20 % in the book's example.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Calculate yearly and lifetime reliability</li>
+      <li>Explain and apply strength coordination</li>
+      <li>Find a design value from Gumbel statistics</li>
+      <li>Apply the strength factor for many components</li>
+      <li>Calculate wind pressure, wind load and ice load</li>
+      <li>Set up combined wind and ice load cases</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s6-1"><summary><span class="num">6.1</span><span class="t">The overhead line as a mechanical system</span><span class="pg">p. 145–157</span></summary><div class="body">
+  <div class="scroll"><table style="min-width:440px"><tr><th>Component</th><th>Elements</th></tr><tr><td>Supports: suspension, angle, strain, dead-end</td><td>Steel, wood or concrete parts, bolts, guys and fittings</td></tr><tr><td>Foundations</td><td>Concrete bodies, piles, steel grillages</td></tr><tr><td>Conductors</td><td>Not subdivided</td></tr><tr><td>Interfaces</td><td>Insulators and hardware</td></tr></table></div>
+  <p>System reliability is the product of component reliabilities. When one component is far less reliable than the others, it alone sets the system value. Ice and wind loads follow an extreme value distribution such as Gumbel. Strengths follow normal or log-normal distributions.</p>
+  <div class="fig"><h4>Four cases of load and strength</h4><div id="caseStep"></div></div>
+  <div class="fig"><h4>Yearly failure probability, Eq. 6.5</h4><div id="pfCalc"></div><figcaption>Numerical integration with Gumbel load and normal strength, where the load of return period T<sub>r</sub> equals the 10 % exclusion strength (Eq. 6.6). This reproduces the shape of Figure 6.3. For T<sub>r</sub> = 50, v<sub>Q</sub> = 0.40, v<sub>R</sub> = 0.05 it gives 0.014, near the 0.015 the book reads from that figure.</figcaption></div>
+  <div class="fig"><h4>Lifetime reliability, Table 6.2</h4><div id="lifeCalc"></div><figcaption>P<sub>S,N</sub> = (1 − P<sub>f1</sub>)<sup>N</sup>. Limit-load figures. In practice partial factors cut real failure rates by one to two orders of magnitude.</figcaption></div>
+  <div class="fig"><h4>Why suspension towers should fail first</h4><div id="coordStep"></div></div>
+  <p>Three reliability levels apply in EN 50341-1, by return period. Level 1, 50 years, for lines up to 150 kV. Level 2, 150 years, for lines from 230 kV that are the main or only supply. Level 3, 500 years, for interconnections, power plant connections and important consumers. Germany designs for 50 year loads with partial factors that reach the 500 year requirement.</p>
+  <div class="fig"><h4>Strength factor for many components, Eq. 6.14</h4><div id="phiCalc"></div><figcaption>When peak load meets N components at once, the weakest fails. e₁ = 1 − (1 − e<sub>N</sub>)<sup>1/N</sup>. Book results: N = 10 and v<sub>R</sub> = 0.20 give 0.72 (normal) or 0.82 (log-normal). The log-normal seems more suitable, as strength has a lower threshold.</figcaption></div>
+  <div class="fig"><h4>Use factor</h4><div id="useCalc"></div><figcaption>Tables 6.5 and 6.6, mean U for wind span and weight span, from number of suspension tower types, terrain A flat, B hilly, C mountainous, and 1 no constraint, 2 site constraints. With variable use, take γ<sub>U</sub> as 0.95 or 1.00 for design.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s6-2"><summary><span class="num">6.2</span><span class="t">Strengths of components</span><span class="pg">p. 157–159</span></summary><div class="body">
+  <p>The <b>damage limit</b> corresponds to the elastic limit, the <b>failure limit</b> to collapse or rupture. Characteristic strength R<sub>c</sub> = R̄·(1 − U<sub>e</sub>·v<sub>R</sub>), and U<sub>e</sub> is 1.28 for 10 %, about 1.6 for 2 to 5 %, 2.1 under 2 %. The EN design value divides by a material factor: R = R<sub>c</sub>/γ<sub>M</sub>.</p>
+  <div class="fig"><h4>Material partial factors, Table 6.9</h4><div id="gmBars"></div></div>
+  <div class="scroll"><table style="min-width:480px"><tr><th>Component</th><th>Damage limit</th><th>Failure limit</th></tr><tr><td>Lattice members</td><td>Yield</td><td>Breaking, buckling</td></tr><tr><td>Conductors</td><td>About 75 % of RTS</td><td>Ultimate tensile strength</td></tr><tr><td>Insulators</td><td>About 70 % of rated strength</td><td>Rupture</td></tr><tr><td>Separate foundations, uplift</td><td>1° support rotation</td><td>Excessive uplift, 50 to 100 mm</td></tr><tr><td>Compact foundations</td><td>1° rotation</td><td>Rotation of 5° and more</td></tr></table></div>
+</div></details>
+
+<details class="sec" open id="s6-3"><summary><span class="num">6.3</span><span class="t">Wind loads</span><span class="pg">p. 159–165</span></summary><div class="body">
+  <p>Reference wind is the ten minute mean, 10 m above open terrain (category B, or II in EN). Yearly maxima from at least twenty years go through a Gumbel analysis.</p>
+  <div class="fig"><h4>Design value from statistics</h4><div id="gumCalc"></div><figcaption>Eq. 6.32 with C₁ and C₂ from Table 6.26. Check: v = 0.20, T<sub>r</sub> = 50 gives 1.72 at n = 10 and 1.52 as n grows. Fewer years means more uncertainty, so a higher design value. Coefficient of variation of load is twice that of wind velocity (6.37).</figcaption></div>
+  <div class="fig"><h4>Beaufort lookup</h4><div id="bfCalc"></div></div>
+  <div class="fig"><h4>Air density</h4><div id="rhoCalc"></div><figcaption>Eq. 6.48. ρ = 1.225·(288/T)·exp(−0.00012·H). Many standards use 1.25 kg/m³.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s6-4"><summary><span class="num">6.4</span><span class="t">Ice loads</span><span class="pg">p. 165–169</span></summary><div class="body">
+  <p><b>Precipitation icing</b> gives glaze from freezing rain and wet snow. <b>In-cloud icing</b> gives soft and hard rime in the mountains. Lines crossing a valley collect more ice than those running along it.</p>
+  <div class="fig"><h4>Types of ice, Table 6.14</h4><div id="iceStep"></div></div>
+  <div class="fig"><h4>Ice weight and equivalent diameter</h4><div id="iceCalc"></div><figcaption>Equations 6.51 and 6.59, with weight density δ·g. At 900 kg/m³ the weight is 0.0277·t·(d + t) N/m.</figcaption></div>
+  <p>Reference ice load g<sub>IR</sub> = K<sub>RI</sub>·K<sub>n</sub>·K<sub>d</sub>·K<sub>z</sub>·ḡ<sub>I</sub>. With a single observed maximum, take the mean as 0.45·g<sub>Imax</sub> and σ half that. Ten years of field data are the minimum for a reliable base.</p>
+</div></details>
+
+<details class="sec" open id="s6-5"><summary><span class="num">6.5</span><span class="t">Combined wind and ice</span><span class="pg">p. 169–172</span></summary><div class="body">
+  <p>A rare value of one variable is paired with common values of the others, so the combination keeps the same return period.</p>
+  <div class="scroll"><table style="min-width:480px"><tr><th>Condition</th><th>Ice weight</th><th>Wind</th><th>Drag</th><th>Density</th></tr><tr><td>1</td><td>Rare, high</td><td>Common</td><td>Common</td><td>δ₁</td></tr><tr><td>2</td><td>Common</td><td>Rare, high</td><td>Common</td><td>δ₁</td></tr><tr><td>3 (special cases)</td><td>Common</td><td>Common</td><td>Rare, high</td><td>δ₂</td></tr></table></div>
+  <p>Without data, V<sub>IL</sub> = 0.60 to 0.85·V<sub>T</sub> and V<sub>IH</sub> = 0.40 to 0.50·V₅₀. Mean ice is 0.45 of the 50 year value at −5 °C. Long tensioning sections can use 0.6 × the wind load for conductor tension, with care for tower design.</p>
+</div></details>
+
+<details class="sec" open id="s6-6"><summary><span class="num">6.6</span><span class="t">Climatic loads in the standards</span><span class="pg">p. 172–184</span></summary><div class="body">
+  <p>IEC 60826 is the world reference, EN 50341-1 the European one with National Normative Aspects (EN 50341-3). The standards give procedures, while national parts give numbers. The drag factor is 1.0 for conductors, 1.2 for insulators, and up to about 2.8 or more for lattice towers, depending on solidity ratio.</p>
+  <div class="fig"><h4>Wind pressure with height</h4><div id="wpCalc"></div><figcaption>EN 50341-1 General Approach, Equations 6.64 to 6.69, on supports with G<sub>x</sub> = 1.05, against the German EN 50341-3-4 Empirical Approach q<sub>z</sub> = q₀ + 30·z/10 for matching wind zones (Eq. 6.70) multiplied by the 1.35 partial factor for comparison, as in Figure 6.17. Zone 1 terrain II reproduces 779 N/m² at 10 m and 1158 N/m² at 50 m.</figcaption></div>
+  <div class="fig"><h4>Span factor G<sub>L</sub></h4><div id="glCalc"></div><figcaption>EN 50341-1: 1.30 − 0.082·ln a<sub>w</sub> (6.68). German: 0.45 + 60/a<sub>w</sub>, which carries an extra 0.75 gust term. IEC gives 0.94 at 400 m, read from Figure 6.8.</figcaption></div>
+  <div class="grid2">
+    <div class="fig"><h4>Tower to conductor wind ratio, Table 6.22</h4><div id="ratBars"></div><figcaption>Per m². Hornisgrinde measurements show about 6.5, so IEC and EN overestimate conductor wind relative to towers.</figcaption></div>
+    <div class="fig"><h4>Tower base moment, Table 6.21</h4><div id="momBars"></div><figcaption>400 kV double circuit, prevalent load case as a share of EN 50341-3-4.</figcaption></div>
+  </div>
+  <p>Hornisgrinde tests, 1955 to 1960, showed conductors react to ten minute means: measured force was only 0.35 to 0.44 of the 2 s gust value. EN 50341-1 uses the same gust factor for conductors and towers, which the book calls contrary to all observations.</p>
+  <div class="fig"><h4>Non-uniform ice cases, IEC 60826</h4><div id="niStep"></div></div>
+  <div class="fig"><h4>German ice zones</h4><div id="deCalc"></div><figcaption>EN 50341-3-4: zone 1, 5 + 0.1d; zone 2, 10 + 0.2d; zone 3, 20 + 0.4d N/m, d in mm. With ice, 50 % of the wind load and specific ice weight 7500 N/m³.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s6-7"><summary><span class="num">6.7</span><span class="t">Construction and maintenance loads</span><span class="pg">p. 185–186</span></summary><div class="body">
+  <ul class="small"><li>IEC 60826: elements withstand twice lifting loads, or 1.5 times if well controlled.</li><li>Stringing: 1.5 × tension for stationary conductors, 2 × for moving ones.</li><li>Members people stand on: 1.5 kN vertical at mid-length in IEC, 1.0 kN with a 1.5 partial factor in EN.</li><li>EN: members inclined under 60° count as mountable.</li><li>Check temporary anchors and dead-ends for their vertical and longitudinal loads.</li></ul>
+</div></details>
+
+<details class="sec" open id="s6-8"><summary><span class="num">6.8</span><span class="t">Failure containment</span><span class="pg">p. 187–189</span></summary><div class="body">
+  <p>Security measures aim to limit cascades. IEC 60826 applies a residual static load from releasing one conductor at everyday tension without wind or ice, with suspension string swing allowed for. It also considers longitudinal loads, for example a 50 % difference in tension. Stronger measures: factor 1.5, several attachment points together on multi-circuit lines, and section towers about every tenth tower in icy areas.</p>
+</div></details>
+
+<details class="sec" open id="s6-9"><summary><span class="num">6.9</span><span class="t">Statistical distributions</span><span class="pg">p. 189–192</span></summary><div class="body">
+  <div class="fig"><h4>Distribution shapes, Figure 6.19</h4><div id="distCalc"></div><figcaption>Standardised to mean 0 and σ 1. Gumbel has a long upper tail, which suits yearly maximum loads. The log-normal shown has v = 0.3, chosen here for clarity, and has a lower threshold, which suits strength.</figcaption></div>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Table 6.13, p. 162.</b> k<sub>j</sub> for terrain C is printed 1.77, but Table 6.18 gives 1/k<sub>j</sub> = 0.85, so 1.18. The other categories agree.</li>
+    <li><b>Table 6.25, p. 189.</b> Frequency for T<sub>r</sub> = 150 is printed 0.9833. It should be 0.9933, which matches the listed U = 2.476.</li>
+    <li><b>Table 6.4, p. 154.</b> The row for N = 60 appears twice; the second is probably 80, as its use in the text suggests.</li>
+    <li><b>Span factor at 400 m, p. 173 and 176.</b> "Approximately 0.84" in one place, 0.81 by Eq. 6.68 in another.</li>
+    <li><b>German ratio, p. 177 and 180.</b> 4.67 in the text, 4.70 in Table 6.22.</li>
+    <li><b>Air density, p. 144.</b> The symbol list gives 1.285 kg/m³; the text and calculations use 1.225.</li>
+    <li><b>Table reference, p. 173.</b> Eq. 6.60 cites Table 6.14 for k<sub>j</sub>; that is Table 6.13.</li>
+  </ul>
+</div>

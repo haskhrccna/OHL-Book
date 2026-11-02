@@ -1,0 +1,90 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>Insulators carry the conductor and keep the voltage off the tower, year after year, in rain, salt and dust. Three materials compete: porcelain, toughened glass and composite. Two forms dominate: cap-and-pin strings and long rods. Mechanical load sets the rating, overvoltages set the arcing distance, and pollution sets creepage distance, which often governs the number of units. Most of the operating risk comes from pollution layers that turn conductive when moistened.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">Insulators are a small share of cost, yet a poor choice brings repeated flashovers. In the Cigré study, mean time between failures for 10 000 insulator sets ranged from 10 hours to 18 years depending on type.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Tell type A from type B insulators</li>
+      <li>Compare porcelain, glass and composite options</li>
+      <li>Find required creepage from pollution level</li>
+      <li>Size a suspension and a dead-end set</li>
+      <li>Explain voltage distribution along a string</li>
+      <li>Sort tests into type, sample and routine</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s9-1"><summary><span class="num">9.1</span><span class="t">Introduction</span><span class="pg">p. 257–258</span></summary><div class="body">
+  <div class="grid2"><div class="note"><h4>Type A</h4><p class="small">Puncture path through the body at least half the flashover path on the surface. Puncture-proof. Long rods.</p></div><div class="note"><h4>Type B</h4><p class="small">Puncture path under half the flashover path. Not puncture-proof. Cap-and-pin and line post insulators.</p></div></div>
+</div></details>
+
+<details class="sec" open id="s9-2"><summary><span class="num">9.2</span><span class="t">Ceramic insulators</span><span class="pg">p. 257–264</span></summary><div class="body">
+  <div class="fig"><h4>From bell to long rod</h4><div id="hisStep"></div></div>
+  <p>Modern types are C-120 and high-strength C-130 aluminous porcelain. Glazing reduces dirt and adds prestress. Strength falls as cross section grows, so test bar values do not apply directly to a large body. Production: mix, extrude, dry, shape on lathes, glaze, fire. Fittings are set with lead antimony alloy or Portland cement.</p>
+  <p class="small">Insulating crossarms replace steel, shrinking width and height, up to 145 kV in some countries, and suit uprating.</p>
+</div></details>
+
+<details class="sec" open id="s9-3"><summary><span class="num">9.3</span><span class="t">Glass insulators</span><span class="pg">p. 265–267</span></summary><div class="body">
+  <p>Heated to about 600 °C and chilled with air, the surface compresses and the core stays in tension. This toughening raises strength but makes the shell shatter on impact, which is easy to see from the ground. Broken shells still hold about 90 % of the pin force. Solid-core puncture-proof glass cannot be made, so glass is cap-and-pin only. Failures stop after the first year, at about 4·10⁻⁵ a year. Zinc sleeves protect pins on DC or in pollution.</p>
+</div></details>
+
+<details class="sec" open id="s9-4"><summary><span class="num">9.4</span><span class="t">Composite insulators</span><span class="pg">p. 267–269</span></summary><div class="body">
+  <p>A glass fibre reinforced rod carries load. Silicone rubber sheds keep water off and give creepage. The rod uses ECR glass against brittle failure, with crimped fittings. The critical weakness is the seal between fitting, rod and housing: humidity entering can cause brittle fracture.</p>
+  <p>Low weight pays off most at 500 kV and above. The water-repellent surface suits pollution, coasts, DC, and uprating, since one piece can replace a longer set without changing the tower. They are also used as phase spacers against galloping.</p>
+</div></details>
+
+<details class="sec" open id="s9-5"><summary><span class="num">9.5</span><span class="t">Comparing the types</span><span class="pg">p. 269–271</span></summary><div class="body">
+  <div class="scroll"><table style="min-width:560px"><tr><th>Type</th><th>Advantages</th><th>Disadvantages</th></tr>
+  <tr><td>Cap-and-pin</td><td>Holds with damaged shells, simple, strong under impact and bending</td><td>High electric stress, porcelain puncture risk, many corroding fittings, heavy, more maintenance</td></tr>
+  <tr><td>Porcelain long rod</td><td>Puncture-proof, reliable, little maintenance, lighter than cap-and-pin</td><td>Costly, low impact strength, needs dynamic load design, less used outside Europe and the Middle East</td></tr>
+  <tr><td>Composite long rod</td><td>Low weight, hydrophobic, easily adapted</td><td>Sensitive silicone surface, costly, ageing</td></tr></table></div>
+  <div class="fig"><h4>Mean time between failures, Cigré study</h4><div id="mtbf"></div><figcaption>A fictitious 400 kV line with 10 000 sets. Hours on a log scale.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s9-6"><summary><span class="num">9.6</span><span class="t">Tests on insulator units</span><span class="pg">p. 271–278</span></summary><div class="body">
+  <div class="fig"><h4>Three test classes</h4><div id="tstStep"></div></div>
+  <div class="fig"><h4>Sample size, Table 9.6</h4><div id="smpCalc"></div><figcaption>EN 60383-1. One failure means repeating with twice as many. Two failures, or one in the repeat, rejects the lot.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s9-7"><summary><span class="num">9.7</span><span class="t">Design of insulator sets</span><span class="pg">p. 279–281</span></summary><div class="body">
+  <p>Double suspension sets are common in populated areas and at crossings. In line with the conductor, they resist arc damage better, do not form a parallelogram when swinging, and are less visible. Across the line, a broken string shocks the survivor less. Arcing horns or rings guide power arcs, up to 12 000 K, away from the insulators. Above 220 kV they also control the field. Tension sets are double or more, on yoke plates that limit impact after a string fails.</p>
+</div></details>
+
+<details class="sec" open id="s9-8"><summary><span class="num">9.8</span><span class="t">Requirements for insulator sets</span><span class="pg">p. 281–287</span></summary><div class="body">
+  <p>Requirements come in order: representative overvoltages, coordination withstand voltage, then required withstand voltage after the altitude factor.</p>
+  <div class="fig"><h4>Pollution levels, Table 9.8</h4><div id="polStep"></div></div>
+  <div class="fig"><h4>String selector</h4><div id="selCalc"></div><figcaption>Creepage from Table 9.8 × U<sub>s</sub>. Default reproduces Table 9.10. For cap-and-pin, also check lightning withstand: 19 U 210 B reach 1620 kV, but 13 U 210 BP reach only 1260 kV against 1425 kV required, so creepage alone is not enough.</figcaption></div>
+  <div class="fig"><h4>Suspension set load</h4><div id="susCalc"></div><figcaption>The book's ice and wind case: Q<sub>is</sub> = √(Q<sub>G</sub>² + Q<sub>WI</sub>²), with partial factors 1.35 on load and 2.3 on material (2.0 in EN 50341-1, 2.3 in the German national part). Defaults give 45.2 and 140.3 kN.</figcaption></div>
+  <p><b>DC lines.</b> Operating voltage governs under all pollution levels. Particles are drawn in by the unidirectional field, so pollution is 10 to 100 times higher than on AC. Use long creepage, about 30 mm/kV at light pollution, with 5 % above rated pole voltage. Anti-fog cap-and-pin with creepage to height of 2.8 to 3.2, zinc sleeves, grading rings, silicone grease or composite insulators all help.</p>
+</div></details>
+
+<details class="sec" open id="s9-9"><summary><span class="num">9.9</span><span class="t">Performance in service</span><span class="pg">p. 287–294</span></summary><div class="body">
+  <div class="fig"><h4>Voltage along a string</h4><div id="dstCalc"></div><figcaption>Figures 9.21 and 9.22 in outline. Clean strings drop about 55 % across the live third, through capacitance. Rings even this out. With pollution, surface resistance sets the distribution; in high humidity, a few units take most voltage. Curves are schematic, built around the 55 % point.</figcaption></div>
+  <p>With conductive layers, flashover can drop to about 20 % of the dry, clean value, so operating voltage alone may flash it over. Surface current losses are only about one thousandth of total losses.</p>
+  <div class="fig"><h4>How a pollution flashover develops</h4><div id="flaStep"></div></div>
+  <div class="fig"><h4>Keeping insulation capable</h4><div id="mntStep"></div></div>
+  <p class="small">Dead-end sets clean better, so some utilities reduce creepage 10 %. Suspension insulators also protect large birds from flashovers. Lines at 90 kV and above use suspension insulators only on straight sections.</p>
+</div></details>
+
+<details class="sec" open id="s9-10"><summary><span class="num">9.10</span><span class="t">Testing insulator sets</span><span class="pg">p. 295–296</span></summary><div class="body">
+  <div class="scroll"><table style="min-width:440px"><tr><th>Test</th><th>Applies</th><th>Detail</th></tr><tr><td>Power frequency, wet</td><td>Up to 245 kV</td><td>1 minute, no flashover</td></tr><tr><td>Fast-front, dry</td><td>Every voltage</td><td>1.2/50 μs, both polarities</td></tr><tr><td>Slow-front, wet</td><td>Above 245 kV</td><td>250/2500 μs</td></tr><tr><td>Radio interference</td><td>Optional</td><td>By agreement</td></tr><tr><td>Corona extinction</td><td>Optional</td><td>At least 1.05·U<sub>s</sub>/√3</td></tr></table></div>
+  <p class="small">Tests on complete sets are optional. Correct results by relative insulation strength: test voltage = withstand × RIS; flashover = measured/RIS.</p>
+</div></details>
+
+<details class="sec" open id="s9-11"><summary><span class="num">9.11</span><span class="t">Worked selection</span><span class="pg">p. 297–300</span></summary><div class="body">
+  <div class="scroll"><table style="min-width:480px"><tr><th>420 kV, quad 264-AL1/34</th><th>Light</th><th>Heavy</th></tr><tr><td>Required creepage</td><td>6720 mm</td><td>10 500 mm</td></tr><tr><td>Suspension, long rod</td><td>3 × L 160 C 650</td><td>3 × LG 75/32S/1465</td></tr><tr><td>Suspension, cap-and-pin</td><td>22 × U 160 BS</td><td>24 × U 160 BSP</td></tr><tr><td>Dead-end, long rod</td><td>3 × L 210 C 650, double</td><td>3 × LG 85/32S/1515, double</td></tr><tr><td>Dead-end, cap-and-pin</td><td>19 × U 210 B, double</td><td>20 × U 210 BP, double</td></tr></table></div>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Insulation level name, p. 283.</b> The text uses BSIL for fast-front overvoltages. Chapter 2 calls that BIL, and BSIL the switching level.</li>
+    <li><b>Table reference in Chapter 2.</b> L 100 C 325 and L 210 C 550 are cited to Table 9.4. They are in Table 9.2 and 9.3 here; Table 9.4 lists ceramic materials.</li>
+    <li><b>Material factor, p. 298.</b> Uses a material factor of 2.3, while the mechanical design text says 2.0 under EN 50341-1. Both are right in context, since 2.3 is the German national value, but the book does not state this at the point of use.</li>
+  </ul>
+</div>

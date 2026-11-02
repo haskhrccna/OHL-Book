@@ -1,0 +1,99 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>A line is an electrical component before it is a structure. Its surge impedance sets its natural power, and length decides whether heat, voltage drop or stability limits it. Voltage causes fields, corona, radio noise and audible noise. Overvoltages come in three kinds, power frequency, slow-front and fast-front, and each sets air clearances through a different formula. Wind swing then decides how much of that clearance survives. The tower head is the result of combining all of these.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">Tower dimensions, conductor bundles and right-of-way width all come from this chapter. A bigger bundle costs money up front but can cut audible noise by about 18 dB(A), and a clearance formula decides whether a tower head is 5 m or 6.5 m wide.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Calculate surge impedance load and the stability limit</li>
+      <li>Say which limit governs a line of a given length</li>
+      <li>Calculate conductor gradient, radio interference and audible noise</li>
+      <li>Explain deterministic and statistical insulation coordination</li>
+      <li>Calculate Del, Dpp and clearances to obstacles</li>
+      <li>Find swing angles and check a tower head</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s2-1"><summary><span class="num">2.1</span><span class="t">Lines as components of electric systems</span><span class="pg">p. 28–32</span></summary><div class="body">
+  <p>When the energy stored in the electric and magnetic fields is equal, U/I = √(L/C). That ratio is the <b>surge impedance</b> Z<sub>c</sub>. Power flowing at this condition is the <b>surge impedance load</b> or natural power: the line's reactive losses are exactly offset by its capacitance. Well above it you may need shunt capacitors, and well below it shunt reactors.</p>
+  <div class="eq">P<sub>nat</sub> = U<sub>pp</sub>² / Z<sub>c</sub> &nbsp; (2.5, written out from the worked values)</div>
+  <div class="fig"><h4>Surge impedance load</h4><div id="silCalc"></div><figcaption>Z<sub>c</sub> falls with more subconductors per phase: 400, 320, 280 and 240 Ω for 1 to 4 in Table 2.1. Other ways to raise SIL: higher voltage, closer phases, larger diameter, bigger bundle radius, bundle expansion along the span.</figcaption></div>
+  <div class="grid2">
+    <div class="fig"><h4>What limits a line (2.1.4)</h4><div id="limCalc"></div><figcaption>For range II lines, U<sub>s</sub> ≥ 245 kV, that are radial or feed a weak system. Between strong systems, reactive power or terminal equipment may govern.</figcaption></div>
+    <div class="fig"><h4>Stability limit, Eq. 2.7</h4><div id="angCalc"></div><figcaption>Series compensation cuts X<sub>L</sub>. The reference values are illustrative. The book limits the dynamic angle to below 45°.</figcaption></div>
+  </div>
+  <p><b>Stability.</b> Steady-state stability concerns small disturbances and depends on the operating state. Transient stability concerns big ones such as line faults, and depends on their size and location. <b>Voltage regulation</b> of 5 to 10 % is the highest practical limit, and matters on radial lines up to 150 kV.</p>
+  <div class="grid2">
+    <div><h4>Reliability terms</h4><ul class="small"><li>Mechanical unavailability is the inverse of twice the design return period. All other components together add at most 25 % of that.</li><li>30 to 35 % of reclosing operations after lightning fail, each costing 2 to 4 hours.</li><li>Switching flashover probability is low, around 10⁻³ to 10⁻⁴.</li><li>Power frequency causes add about 0.3 outages a year, under 10 hours each.</li></ul></div>
+    <div><h4>Compensation</h4><ul class="small"><li><b>Series capacitors</b> offset line reactance, shortening the line electrically. Watch sub-synchronous resonance.</li><li><b>Shunt reactors</b> absorb charging power at light load (Ferranti effect).</li><li><b>Shunt capacitors</b> support voltage at high load.</li><li><b>Synchronous condensers</b> and <b>static compensators</b> do both.</li></ul></div>
+  </div>
+  <div class="fig"><h4>Power per metre of corridor, Table 2.2</h4><div id="effBars"></div><figcaption>Power grows with U² but right-of-way grows nearly with U, so higher voltage uses a corridor far better.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s2-2"><summary><span class="num">2.2</span><span class="t">Current-related phenomena</span><span class="pg">p. 32–33</span></summary><div class="body">
+  <div class="scroll"><table><tr><th>Condition</th><th>Meaning</th><th>Al and ACSR temperature</th></tr><tr><td>Normal</td><td>No loss of mechanical properties over a 30 to 40 year life</td><td>Up to 80 °C</td></tr><tr><td>Emergency</td><td>No more than 10 % strength loss over the life</td><td>100 to 120 °C</td></tr></table></div>
+  <p>Ohmic losses in a three-phase line are 3·R<sub>AC</sub>·I² (Eq. 2.9), using resistance at operating temperature. Lines must also survive short circuits: 0.1 to 0.2 s for first or second zone relays, and for back-up with reclosing 0.5 to 1 s up to 300 kV, or 0.2 to 0.5 s above it.</p>
+</div></details>
+
+<details class="sec" open id="s2-3"><summary><span class="num">2.3</span><span class="t">Fields, corona and noise</span><span class="pg">p. 33–43</span></summary><div class="body">
+  <p>Field strength E is in kV/m. Flux density B = μ₀·H, so 1 A/m = 1.256 μT in air. A 1 kV/m field drives about 0.015 mA through the body. Up to 1 mA/m² no biological effect is detected. Above 10 eye flickering can occur, 100 is the hazard threshold, and harm is expected from 1000.</p>
+  <div class="fig"><h4>What a line produces against the precaution values</h4><div class="row" id="fldBtn"></div><div id="fldChart"></div><figcaption>Table 2.6 ranges at ground level, with B for 1000 A per circuit. The dashed line is 5 kV/m or 100 μT, the European general public values in Tables 2.4 and 2.5. So magnetic limits will not affect line design, while electric limits can matter at 420 kV and above.</figcaption></div>
+  <p><b>Corona</b> starts when the surface gradient reaches a critical value: about 27 kV<sub>rms</sub>/cm for a smooth 10 mm cylinder, and 21 for a stranded conductor. The book recommends staying around <b>17 kV<sub>rms</sub>/cm</b>. Corona causes radio interference, audible noise and losses.</p>
+  <div class="fig"><h4>Conductor gradient, radio noise and audible noise</h4><div id="corCalc"></div><figcaption>Single circuit, Equations 2.19 to 2.29, at 40 m from one phase distance as in the book's example, all three phases equal. Default values reproduce 17.2 kV/cm, 41.1 dB and 47.3 dB(A). Try 4 subconductors.</figcaption></div>
+  <div class="grid2">
+    <div><h4>Radio interference</h4><p class="small">Measured at 1 MHz in dB above 1 μV/m, usually at the right-of-way edge. Signal-to-noise matters more than noise alone. Example: class C needs 22 dB, so a 66 dB signal allows 66 − 22 = 44 dB from the line. If one phase is 3 dB or more above the others, the others can be ignored. Otherwise average the top two and add 1.5 dB.</p></div>
+    <div><h4>Audible noise</h4><p class="small">Mainly a foul weather effect. Residential 45 dB(A) is hard to meet permanently. Complaints are avoided under 50 dB(A) and expected above 55 dB(A), which can occur near 420 kV lines with high gradients.</p></div>
+  </div>
+  <div class="fig"><h4>Design choices and their effects, Table 2.10</h4><div class="scroll"><table style="min-width:520px" id="t210"></table></div><figcaption>↑ raises the effect, ↓ reduces it, → little impact. * Substantial reduction outside the right-of-way, using an asymmetric phase arrangement on two circuits.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s2-4"><summary><span class="num">2.4</span><span class="t">Line performance and insulation</span><span class="pg">p. 43–50</span></summary><div class="body">
+  <p>Overvoltages are rare and brief. Power frequency voltage is low but permanent, and it governs the insulator string design through pollution and creepage distance. A clearance has to cope with each kind of stress in a different state of the line.</p>
+  <div class="fig"><h4>Three stresses, three design cases</h4><div id="stressStep"></div></div>
+  <div class="fig"><h4>Standard impulse shapes</h4><div id="impChart"></div><figcaption>Log time axis. Slow-front 250/2500 μs and fast-front 1.2/50 μs, drawn from a double exponential fit (added here) to show how different the time scales are. Air is much weaker against slow-front stress.</figcaption></div>
+  <div class="grid2">
+    <div class="note"><h4>Deterministic method</h4><p class="small">Assumes a definite maximum overvoltage U<sub>max</sub> and minimum withstand U<sub>w</sub>, with a safety margin between them. Conservative, because both extremes rarely coincide. The withstand is the BSIL for switching, BIL for lightning.</p></div>
+    <div class="note"><h4>Statistical method</h4><p class="small">Treats stress and strength as distributions. Their overlap is the probability of flashover. Usual PFO is 10⁻² to 10⁻⁴, one outage in 100 to 10 000 switching operations. Air may flash over because it recovers; solid insulation may not.</p></div>
+  </div>
+  <div class="fig"><h4>Flashover risk from overlapping distributions</h4><div id="pfoCalc"></div><figcaption>Fig. 2.7 redrawn. Risk is computed by numerical integration of Gaussian curves. Inputs are illustrative. U<sub>2%</sub> is the overvoltage exceeded with 2 % probability, U<sub>90%</sub> the 90 % withstand.</figcaption></div>
+  <p><b>Air density.</b> U<sub>50%real</sub> = U<sub>50%</sub>·(δ/k<sub>hm</sub>)ⁿ, where δ = (288/T)·exp(−0.00012·h). The bracket with its exponent is the relative insulation strength. At 1000 m, 293 K, 4 m gap and 15 g/m³ the book gets 0.95.</p>
+  <p><b>Lightning</b> reaches phases by <b>shielding failure</b>, past the earth wire, or by <b>back-flashover</b>, when stroke current raises the tower potential. 60 to 70 % of lightning flashovers are transient and reclose. The measure is outages per 100 km per year. Live-line work can also govern clearances.</p>
+</div></details>
+
+<details class="sec" open id="s2-5"><summary><span class="num">2.5</span><span class="t">Clearances</span><span class="pg">p. 50–75</span></summary><div class="body">
+  <p>Each stress maps to a withstand voltage, and each gap shape to a gap factor K<sub>g</sub>. The required air gap comes from U<sub>rw</sub> = K<sub>a</sub>·K<sub>z</sub>·K<sub>g</sub>·U<sub>50%rp</sub>, with the rod-to-plane gap as reference. K<sub>a</sub> falls with altitude, K<sub>z</sub> converts 50 % withstand to the required level.</p>
+  <div class="scroll"><table style="min-width:520px"><tr><th>Stress</th><th>V<sub>u</sub></th><th>K<sub>z</sub></th><th>Rod-plane U<sub>50%</sub>, d in m</th><th>Representative, phase-earth</th><th>Phase-phase</th></tr>
+  <tr><td>Fast-front</td><td>0.03</td><td>0.961</td><td class="mono">530·d</td><td>U<sub>90%ff,ins</sub></td><td>1.2 × that</td></tr>
+  <tr><td>Slow-front</td><td>0.06</td><td>0.922</td><td class="mono">1080·ln(0.46d+1)</td><td>K<sub>cs</sub>·U<sub>2%</sub>, K<sub>cs</sub> = 1.05</td><td>1.4 × that</td></tr>
+  <tr><td>Power frequency</td><td>0.03</td><td>0.910</td><td class="mono">750√2·ln(1+0.55d<sup>1.2</sup>)</td><td>(√2/√3)·U<sub>s</sub></td><td>√2·U<sub>s</sub></td></tr></table></div>
+  <div class="fig"><h4>Clearance calculator</h4><div id="clrCalc"></div><figcaption>Equations 2.51 to 2.56, K<sub>g</sub> from Table 2.14, K<sub>a</sub> interpolated from Table 2.15 using the band of each representative voltage. Default values are the book's 380 kV line. Slow-front applies to U<sub>s</sub> of 300 kV and above.</figcaption></div>
+  <p>Del and Dpp are the basic air distances. Internal clearances can be reduced during rare events, because a flashover there only interrupts supply. External clearances protect people, so Del always applies and a <b>Dadd</b> is added, with C<sub>min</sub> ≥ 1.1·a<sub>som</sub> to ensure any flashover stays on the line.</p>
+  <div class="fig"><h4>Clearance to an obstacle</h4><div id="obsCalc"></div><figcaption>Table 2.24 Dadd plus Table 2.20 Del, checked against 1.1·a<sub>som</sub>. Reproduces the book's 4.95 m and 3.00 m examples.</figcaption></div>
+  <div class="grid2">
+    <div><h4>Load cases (Table 2.23)</h4><div class="scroll"><table><tr><th>Case</th><th>Clearance</th></tr><tr><td>Maximum temperature, no wind</td><td>Del, Dpp</td></tr><tr><td>Ice load</td><td>Del, Dpp</td></tr><tr><td>Medium frequency wind</td><td>k₁·Del, k₁·Dpp</td></tr><tr><td>Local ice in one span</td><td>k₁·Del, k₁·Dpp</td></tr><tr><td>Extreme wind</td><td>Dpf only</td></tr></table></div><p class="small muted">k₁ is 0.7 to 1.0, with 0.75 proven in Germany.</p></div>
+    <div><h4>Wind statistics</h4><ul class="small"><li>Extreme yearly winds follow a Gumbel distribution, Eq. 2.57.</li><li>Time within a year follows a Weibull, Eq. 2.58, β = 2.</li><li>Only sustained 5 to 10 minute averages move a conductor, not gusts.</li><li>Scatter of swing: σ = 2.25·[1 − exp(−V²/230)]°.</li><li>Only wind perpendicular to the line gives full swing, so probability is halved above about 2°.</li></ul></div>
+  </div>
+  <div class="fig"><h4>Swing angle and tower head check</h4><div id="swCalc"></div><figcaption>Eq. 2.63 with air density 1.225 kg/m³ and the Table 2.28 twin bundle, using the 400 m span and weight loading of the book's own bracket. The distance shown is insulator length · sin φ + 0.2 m half bundle + clearance. The book's two checks: 18.5° with 3.15 m gives 4.95 m, and 52.1° with 0.61 m gives 4.76 m.</figcaption></div>
+  <div class="fig"><h4>Midspan spacing, Eq. 2.68</h4><div id="midCalc"></div><figcaption>k<sub>c</sub> from Table 2.22 by conductor swing angle and relative conductor position: range 1 under 30°, range 2 from 30 to 80°, range 3 from 80 to 90°. Book results: 5.8 m at 380 kV with an extra 0.40 m bundle term, 6.27 m at 500 kV with 0.46 m.</figcaption></div>
+  <p class="small"><b>Three design routes in the book.</b> The statistical route gave 6.5 m phase spacing at 380 kV, the European standard route 5.8 m. Brazilian compact practice checks only power frequency at extreme swing, with phases asynchronous by about 8°, and gets 2.56 m in a 5.5 m spaced 500 kV line where Eq. 2.68 would demand 6.27 m.</p>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <p class="small">These are places where a printed number or statement conflicts with the book's own formula or table. The calculators here follow the formulas.</p>
+  <ul class="small">
+    <li><b>Table 2.1, p. 29.</b> Most entries equal U²/Z<sub>c</sub>, but the 400 kV column and the 765 kV entry do not. 400²/320 is 500, printed 557; 400²/280 is 571, printed 602; 400²/240 is 667, printed 627; 765²/240 is 2438, printed 2230.</li>
+    <li><b>380 kV power frequency Del, p. 70.</b> Eq. 2.55 with the printed inputs gives 0.68 m, and the same method reproduces the 110 kV and 500 kV results, but the book prints 0.61 m here and in Table 2.26. The 4.76 m tower result carries this through.</li>
+    <li><b>110 kV Dpp, p. 68 to 69.</b> The text gives 0.69 m and 1.18 m, Table 2.25 gives 0.67 m and 1.14 m. The inputs printed give the table's values; "1,2·570" should be 1,2·550.</li>
+    <li><b>Table 2.7, p. 38.</b> k₂ for 8 subconductors is printed 6.07, but the formula shown gives 5.36. For 3 it is 3.48 against 3.46.</li>
+    <li><b>Bundle circle radius, p. 38.</b> The text gives r₀ = s/sin(π/n₂). Chapter 3 gives the correct s/[2·sin(π/n₂)], which is what Table 2.7 uses.</li>
+    <li><b>Subconductor spacing, p. 42.</b> The text says more spacing reduces radio and audible noise and raises fields. Table 2.10 and the same paragraph's end say the effect is minor, with only audible noise rising. The text probably means phase spacing.</li>
+    <li><b>Table 2.29, p. 72.</b> Eq. 2.57 reproduces most columns, but gives 25.2 m/s at 20 years where 26.5 is printed, and 29.7 at 150 years where 30.9 is printed.</li>
+    <li><b>Swing angle, p. 72.</b> Eq. 2.63 with the listed data gives about 48.5°, about a degree above the printed 47.6°. The book's bracket uses the span, 400 m, although Table 2.28 lists 500 m as wind span.</li>
+  </ul>
+</div>

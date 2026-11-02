@@ -1,0 +1,69 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>A foundation takes tower loads into the ground without unacceptable movement. Everything starts with knowing the soil, by borings and probes at each site. Compact foundations resist a moment with one body: monoblock, slab, or single pile. Separate foundations resist tension and compression under each leg: stepped blocks, auger-bored shafts, grillages or piles. Uplift is usually the governing check, and the earth frustum method stands in for shear resistance. Tests prove design, and on piles often every unit.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">Soil varies along every line, so a single design does not fit. Foundations should stay stronger than towers, because a foundation failure is hard to reach and hard to repair.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Classify soil and read probe results</li>
+      <li>Pick a foundation type for a site</li>
+      <li>Check a monoblock against bearing pressure</li>
+      <li>Check a slab against overturning</li>
+      <li>Find uplift resistance with an earth frustum</li>
+      <li>Run a Blum pile check, and plan a test</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s13-1"><summary><span class="num">13.1</span><span class="t">Requirements and preconditions</span><span class="pg">p. 472</span></summary><div class="body">
+  <p>Foundations carry each load case into the subsoil with sufficient reliability, and without inadmissible movement. Support loads, site survey and soil investigation are the three inputs.</p>
+</div></details>
+
+<details class="sec" open id="s13-2"><summary><span class="num">13.2</span><span class="t">Types of subsoil</span><span class="pg">p. 473–475</span></summary><div class="body">
+  <div class="fig"><h4>Soil by particle size</h4><div id="szCalc"></div><figcaption>Tables 13.2 and 13.3. Mixed soils count as non-cohesive if under 15 % by weight is finer than 0.06 mm. Organic soils are those over 3 % organic (non-cohesive) or 5 % (cohesive), and carry load poorly.</figcaption></div>
+  <p>Residual soils stay where formed and are generally firm. Transferred soils, mostly glacial, can be soft to great depth. Rock depends on weathering. Fill is usable only when well compacted; rubbish tips are not.</p>
+</div></details>
+
+<details class="sec" open id="s13-3"><summary><span class="num">13.3</span><span class="t">Subsoil investigation</span><span class="pg">p. 475–487</span></summary><div class="body">
+  <p>Investigate each site, and always where peat, mud, silt or quick sand may occur. In uniform terrain, designs for normal, weak and very good soil can be chosen at excavation.</p>
+  <div class="fig"><h4>How deep to investigate</h4><div id="dpCalc"></div><figcaption>IEC 61773: uplift foundations to foundation depth. Compression foundations to the greater of 1.1 × depth or width + depth, but no more than 3.0 m under the base. Rock: core to at least 3.0 m.</figcaption></div>
+  <div class="fig"><h4>Investigation tools</h4><div id="toolStep"></div></div>
+  <div class="fig"><h4>Reading a Gouda cone test</h4><div id="cptCalc"></div><figcaption>Friction ratio R<sub>f</sub> = f<sub>s</sub>/q<sub>s</sub> identifies soil (Fig. 13.6). Point pressure gives compactness of uniform fine and medium sand (Table 13.7). From it, E<sub>s</sub> = 1.5 to 3 × q<sub>s</sub> and K<sub>s</sub> = 1.4·E<sub>s</sub>/d.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s13-4"><summary><span class="num">13.4</span><span class="t">Design of foundations</span><span class="pg">p. 488–526</span></summary><div class="body">
+  <div class="fig"><h4>Soil design values</h4><div id="soilCalc"></div><figcaption>Table 13.13 and Equations 13.4 and 13.5. Below 1.5 m, σ<sub>t</sub> = σ<sub>1.5</sub> + (t − 1.5)·γ·κ, with an extra 1.6 for ultimate. Use submerged weight for water. Only where all sides are embedded.</figcaption></div>
+  <div class="fig"><h4>Foundation types</h4><div id="ftStep"></div></div>
+  <div class="fig"><h4>Monoblock without base enlargement</h4><div id="mbCalc"></div><figcaption>Parabolic earth pressure, pivot at two thirds of depth. σ = 12·M·(h + 2t/3)/(h·b·t²), Eq. 13.12. Defaults are the book's example. Inclination limited to 1 % at characteristic loads and 1.5 % at ultimate.</figcaption></div>
+  <div class="fig"><h4>Slab foundation: overturning and bearing</h4><div id="slCalc"></div><figcaption>Eq. 13.14 limits the resultant to an ellipse, drawn in plan with the dot at (e<sub>x</sub>, e<sub>y</sub>). γ<sub>M</sub> ≥ 1.2 at ultimate, 1.5 at characteristic. Bearing is over (b<sub>x</sub> − 2e<sub>x</sub>)·(b<sub>y</sub> − 2e<sub>y</sub>). Defaults reproduce γ = 1.42 and N<sub>d</sub> = 4743 kN.</figcaption></div>
+  <p class="small">Slab reinforcement can follow a beam grillage, or better a slab model using the legs as supports, avoiding stirrups. Bearing distribution: conventional (linear), subgrade modulus (s = σ/K<sub>s</sub>), or compressibility modulus.</p>
+  <div class="fig"><h4>Uplift with an earth frustum</h4><div id="frCalc"></div><figcaption>Shear resistance is replaced by the weight of an earth body, with no claim this is what actually lifts out. β = β₀·√(b/T), capped by β₀ if b/T ≥ 1 and below 35°. β₀ interpolates between Table 13.14 limits for 1.5 and 5.0 m width (blocks) or 1.2 and 2.1 m (auger). Default: the book's Type A block, R = 1098 kN against 658 kN, ratio 1.67.</figcaption></div>
+  <div class="grid2">
+    <div class="note"><h4>Stepped blocks</h4><ul class="small"><li>Type A: bottom step against undisturbed soil, firm dry ground.</li><li>Type S: all cast against planking, loose or wet ground.</li><li>Extra: G/S ≥ 0.67 (A) or 0.80 (S) characteristic.</li><li>Step height to projection n ≥ 1.4, unreinforced.</li></ul></div>
+    <div class="note"><h4>Other separate types</h4><ul class="small"><li>Auger-bored: firm dry cohesive, vertical shaft, bell at base.</li><li>Grillage: steel pyramid 2 to 4 m, no concrete, needs good compacted backfill. Uplift factors 1.5 to 1.8.</li><li>Piles: high water or deep bearing layer; factor 2.0 characteristic, 1.5 ultimate for theoretical uplift.</li></ul></div>
+  </div>
+  <div class="fig"><h4>Single pile by Blum</h4><div id="blCalc"></div><figcaption>Equations 13.19 and 13.21, f<sub>w</sub> = γ·tan²(45 + φ/2). Embedment t = 1.2·t₀. Defaults: 29.5 kN at 11 m above bearing soil, d = 0.762 m, f<sub>w</sub> = 30 kN/m³. Book: x<sub>m</sub> = 1.30 m, t = 4.50 m, M about 351 kN·m.</figcaption></div>
+  <p class="small"><b>Leg anchoring</b> checks concrete compression, bond and weld, as in 7.50, 1.84 and 136 N/mm² in the book's example. <b>Guyed towers:</b> central footing in compression, anchors in uplift, 2.5 m deep in good soil, 3.5 m in poor soil. Field test prototypes. German rule: γ<sub>M</sub> = 1.65 on guy anchorage. Timber: bury one sixth of length, at least 1.6 m.</p>
+</div></details>
+
+<details class="sec" open id="s13-5"><summary><span class="num">13.5</span><span class="t">Testing of foundations</span><span class="pg">p. 527–534</span></summary><div class="body">
+  <div class="scroll"><table style="min-width:520px"><tr><th>Test</th><th>Purpose</th><th>Steps, % of target</th><th>Hold</th></tr><tr><td>Design</td><td>Prove design or find failure, usually on special foundations</td><td>25, 50, 70, 80, 90, 100, 0</td><td>10 min, design load 30 min</td></tr><tr><td>Proof</td><td>Check production quality, 60 to 75 % of design load</td><td>50, 75, 90, 100, 0</td><td>3 min</td></tr></table></div>
+  <div class="fig"><h4>Tangent intersection</h4><div id="tgChart"></div><figcaption>Figure 13.35's method on a schematic curve. Two tangents, elastic and plastic, meet at the load capacity. In the book's example that is 41.5 kN.</figcaption></div>
+  <div class="fig"><h4>Reaction support clearance</h4><div id="clCalc"></div><figcaption>IEC 61773: C<sub>L</sub> = b + 0.7·t for footings; for piers and piles, the greater of 3·d or 2 m.</figcaption></div>
+  <p class="small">Test concrete after at least 14 days, and piles in cohesive soil after 21 days. Prove at least 5 % of relevant foundations, some utilities every pile. EN 50341-3-4 pile test: 1.25 × nominal, extrapolating to 1.5 × nominal. Displacements of 3 to 5 mm (cast in situ) and up to 8 mm (grouted) may be accepted.</p>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Slab example, p. 497 to 498.</b> The text prints 7521 for 7251 kNm, though 2.68 m follows from 7251. Then (200 + 0.25·0.35·19) must be 3.5, as 5846 kN needs 3.5.</li>
+    <li><b>Auger example, p. 509.</b> 32·√0.35 = 18.93°, printed 18.83°. A small effect on the 5.35 m frustum.</li>
+    <li><b>"Looze" twice, p. 487.</b> One term is defined as both organic river soil and chalk-cemented silt, the second being loess.</li>
+    <li><b>Standard number.</b> EN 50431-1 is printed for EN 50341-1.</li>
+  </ul>
+  <p class="small muted">Coverage note: pile skin friction data and rock anchors in clause 13.4.4 were scanned, not studied in full. They are not used in the calculators here.</p>
+</div>

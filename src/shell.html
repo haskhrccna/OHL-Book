@@ -1,0 +1,29 @@
+<div class="wrap">
+<header class="top">
+  <p class="eyebrow">Study route · Kiessling, Nefzger, Nolasco, Kaintzyk · Overhead Power Lines (Springer, 2003)</p>
+  <svg class="route" id="route" viewBox="0 0 1000 96" role="group" aria-label="Seventeen chapters drawn as towers on a line. Select a tower to open that chapter."></svg>
+  <div class="row navrow">
+    <label>Chapter <select id="chSel"></select></label>
+    <span class="row"><a id="prevT" href="#">← Previous</a><a id="nextT" href="#">Next →</a></span>
+  </div>
+  <h1 id="title"></h1>
+  <p class="lead" id="lead"></p>
+</header>
+<nav class="tabs" aria-label="Chapter sections">
+  <a data-t="summary">Summary</a><a data-t="study">Study guide</a><a data-t="quiz">Quiz</a>
+</nav>
+<section class="panel" id="p-summary"></section>
+<section class="panel" id="p-study" hidden>
+  <div style="display:grid;gap:10px">
+    <h2>Key terms</h2>
+    <p class="small muted">Tap a card to flip it, then mark it. Cards marked "Review again" move to the front.</p>
+    <div class="row"><span class="mono small" id="cardStat"></span><button class="ghost" id="cardReset">Reset marks</button></div>
+    <div class="cards" id="cards"></div>
+  </div>
+  <div style="display:grid;gap:10px"><h2>Formula sheet</h2><div class="scroll"><table id="fm"></table></div></div>
+  <div style="display:grid;gap:12px"><h2>Worked examples</h2><p class="small muted">Try each step yourself, then reveal the next.</p><div class="grid2" id="wx"></div></div>
+  <div style="display:grid;gap:10px"><h2>Common mistakes</h2><div class="scroll"><table id="bad"></table></div></div>
+</section>
+<section class="panel" id="p-quiz" hidden><div id="quizRoot" style="display:grid;gap:16px;min-width:0"></div></section>
+<footer class="chapfoot"><a id="prevB" href="#">← Previous chapter</a><a id="nextB" href="#">Next chapter →</a></footer>
+</div>

@@ -1,0 +1,101 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>Earthing protects people first, then equipment and performance. When fault current enters the ground at a tower, the ground surface rises in potential, and that rise appears as touch and step voltages. Earth wires carry much of the current away, and a design check compares the rise with the permissible touch voltage. Resistance follows soil resistivity, which is measured with the Wenner method and usually modelled in two layers.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">Touch voltage safety is the only requirement here that comes before everything else. It also feeds lightning performance from Chapter 4. Most of an electrode's resistance sits close to it, so a few metres of counterpoise and a good soil survey decide the outcome.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Explain earthing voltage, touch and step voltage</li>
+      <li>Follow the touch voltage design flow</li>
+      <li>Find earth potential rise and impedance to earth</li>
+      <li>Size earthing conductors for fault current</li>
+      <li>Calculate resistance of rods, rings and counterpoises</li>
+      <li>Interpret Wenner and fall-of-potential tests</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s5-1"><summary><span class="num">5.1</span><span class="t">Purpose of earthing</span><span class="pg">p. 117</span></summary><div class="body">
+  <p>EN 50341-1 sets five requirements: safety of persons (priority, and including animals), no damage to third parties, acceptable performance, rating for the maximum earth current, and sufficient mechanical strength and corrosion resistance.</p>
+  <p>Three types exist: <b>operational</b>, <b>protection</b> and <b>lightning protection</b> earthing. Requirements depend on neutral design, support type and material, and whether the site is exposed, such as bathing areas, camp sites or playgrounds.</p>
+</div></details>
+
+<details class="sec" open id="s5-2"><summary><span class="num">5.2</span><span class="t">Definitions and basics</span><span class="pg">p. 118</span></summary><div class="body">
+  <div class="fig"><h4>Ground potential around an electrode</h4><div id="potCalc"></div><figcaption>Hemispherical electrode in uniform soil, Equations 5.11 to 5.13. Touch voltage here is taken at 1 m from the electrode, and step voltage across 1 m further out. The book says these can reach 50 % and 30 % of the earthing voltage in practice, under 10 % with potential control.</figcaption></div>
+  <p>Fault current splits between earth and earth wires. The impedance to earth Z<sub>E</sub> is tower resistance R<sub>T</sub> in parallel with the iterative network impedance Z<sub>∞</sub> of each line direction, which is usually only a few ohms (Fig. 5.4). The reduction factor r<sub>E</sub> says how much returns through earth.</p>
+</div></details>
+
+<details class="sec" open id="s5-3"><summary><span class="num">5.3</span><span class="t">Requirements</span><span class="pg">p. 119–122</span></summary><div class="body">
+  <div class="fig"><h4>Permissible touch voltage</h4><div id="touchCalc"></div><figcaption>Table 5.1 values for U<sub>TP</sub>, with U<sub>D</sub> = U<sub>TP</sub>·(1 + R<sub>a</sub>/Z<sub>B</sub>) from Eq. 5.5, interpolating Z<sub>B</sub>. R<sub>a</sub> examples from Fig. 5.5: 1750 Ω shoes on roads, 4000 Ω high resistivity ground, 7000 Ω very high resistivity. Assumes hand to both feet, 50 % body impedance, under 5 % fibrillation risk, with 75 % of the body impedance used.</figcaption></div>
+  <p>Complying with touch limits also excludes step hazards, as permissible step voltages are higher. Final temperatures: 300 °C for copper and steel, 200 °C for aluminium. Below 5 s heating can be taken as adiabatic. Minimum earthing conductors: 16 mm² copper, 35 mm² aluminium, 50 mm² steel.</p>
+  <div class="fig"><h4>Earth wire reduction factors, Table 5.4</h4><div id="rBars"></div><figcaption>Lower is better: more current returns through the earth wire. r<sub>E</sub> = 1 − Z<sub>CE</sub>/Z<sub>EE</sub> relates mutual and self impedance. Conductivity and distance to the conductors matter most.</figcaption></div>
+  <div class="scroll"><table style="min-width:480px"><tr><th>Neutral</th><th>Thermal design</th><th>Touch voltage check</th></tr><tr><td>Isolated</td><td>Double earth fault I"<sub>kEE</sub></td><td>r<sub>E</sub>·I<sub>C</sub></td></tr><tr><td>Resonant earthed</td><td>I"<sub>kEE</sub></td><td>r<sub>E</sub>·I<sub>RES</sub></td></tr><tr><td>Low-resistance</td><td>I"<sub>k1</sub></td><td>r<sub>E</sub>·I"<sub>k1</sub></td></tr></table></div>
+</div></details>
+
+<details class="sec" open id="s5-4"><summary><span class="num">5.4</span><span class="t">Earthing for personal safety</span><span class="pg">p. 122–124</span></summary><div class="body">
+  <p>In isolated or resonant systems, usually up to 110 kV, faults can last hours and the touch voltage may not exceed 65 V. This is met if Z<sub>E</sub> ≤ 130/I<sub>E</sub> (5.2), where I<sub>E</sub> = r<sub>E</sub>·I<sub>F</sub>. With automatic disconnection within 0.5 s in low-resistance systems, no special limits apply unless the site is sensitive. At 110 kV and above an expectation factor of 0.7 can also apply.</p>
+  <div class="fig"><h4>Design flow, Figure 5.6</h4><div id="flow"></div></div>
+  <div class="fig"><h4>Earth potential rise check</h4><div id="eprCalc"></div><figcaption>Equations 5.3 and 5.4. Z<sub>E</sub> = 0.25·(Z<sub>S</sub> + √(Z<sub>S</sub>·(4R<sub>T</sub> + Z<sub>S</sub>))). The check uses step 5 of the flow: rise below 2·U<sub>D</sub>. Inputs are illustrative.</figcaption></div>
+  <p class="small">Fixes for sensitive sites: non-conductive barriers or bushes, gravel or asphalt, and grading electrodes. For supports with disconnectors or transformers, an earthing voltage under 250 V and a ring about 1 m out and under 0.5 m deep meets the 65 V limit.</p>
+</div></details>
+
+<details class="sec" open id="s5-5"><summary><span class="num">5.5</span><span class="t">Operational earthing</span><span class="pg">p. 124</span></summary><div class="body"><p>Needed at specific circuit points such as voltage transformers or transformer neutrals. On lines it matters only at poles with transformers or disconnectors.</p></div></details>
+
+<details class="sec" open id="s5-6"><summary><span class="num">5.6</span><span class="t">Lightning protection earthing</span><span class="pg">p. 124–125</span></summary><div class="body">
+  <p>Earthing resistance sets the back-flashover rate. Tower impulse impedance is limited in relation to insulator impulse withstand and peak current (Eq. 5.7). Table 5.5 gives the current distribution for Central Europe.</p>
+  <div class="fig"><div id="t55"></div><figcaption>Table 5.5, probability that the peak current does not exceed each value.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s5-7"><summary><span class="num">5.7</span><span class="t">Rating for short-term currents</span><span class="pg">p. 125</span></summary><div class="body">
+  <div class="fig"><h4>Earthing conductor cross section</h4><div id="xsCalc"></div><figcaption>Eq. 5.8 with Table 5.6 constants, for durations below 5 s. Final temperature 300 °C for copper and steel, 200 °C for aluminium.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s5-8"><summary><span class="num">5.8</span><span class="t">Soil resistivity</span><span class="pg">p. 125–126</span></summary><div class="body">
+  <p>Moisture dominates. Red clay at 10 % moisture is over 30 times more resistive than at 20 %, and above 20 % resistivity changes little.</p>
+  <div class="fig"><h4>Soil resistivity ranges, Table 5.7</h4><div id="soilFig"></div></div>
+</div></details>
+
+<details class="sec" open id="s5-9"><summary><span class="num">5.9</span><span class="t">Calculating earthing resistance</span><span class="pg">p. 126–130</span></summary><div class="body">
+  <p>For a hemisphere, 50 % of the total resistance lies within one radius of the surface, and 90 % within nine radii. That is why soil close to an electrode matters most.</p>
+  <div class="fig"><h4>Electrode comparison</h4><div id="elecCalc"></div><figcaption>Rod 5.14, buried wire from Table 5.8, radial 5.19 and ring 5.20. Resistance is proportional to resistivity, while material and thickness matter little, so any mechanically adequate counterpoise is electrically adequate.</figcaption></div>
+  <div class="fig"><h4>Rods in parallel, Figure 5.10</h4><div id="rodBars"></div><figcaption>Share of the resistance of one rod, 3 m long and 3 m apart. Crowding means three rods are about 15 % worse than widely spaced, and four in a square 25 %.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s5-10"><summary><span class="num">5.10</span><span class="t">Measuring soil resistivity</span><span class="pg">p. 130–132</span></summary><div class="body">
+  <p>The Wenner method uses four rods equally spaced by a. Current flows between the outer pair and voltage is read between the inner pair. Five spacings of 2, 4, 8, 16 and 32 m are usual, as wider spacing reaches deeper. With probe depth much smaller than a, ρ<sub>E</sub> = 2π·a·R<sub>E</sub> (5.30).</p>
+  <div class="fig"><h4>Wenner arrangement</h4><div id="wenCalc"></div></div>
+</div></details>
+
+<details class="sec" open id="s5-11"><summary><span class="num">5.11</span><span class="t">Measuring earthing resistance</span><span class="pg">p. 132–135</span></summary><div class="body">
+  <div class="fig"><h4>Three methods</h4><div id="mthStep"></div></div>
+  <div class="fig"><h4>Fall-of-potential curve</h4><div id="fopCalc"></div><figcaption>Eq. 5.39 for a hemisphere of radius 1 m in 100 Ω·m soil, normalised. The flat part holds the true resistance. Best position a = 0.62·l.</figcaption></div>
+  <div class="fig"><h4>Check three readings</h4><div id="chkCalc"></div><figcaption>Readings at a = 30, 40, 50 m with l = 60 m may not differ from the mean by over 20 %. Otherwise repeat at l = 80 m. Defaults are tower B in Table 5.9. Tower A has 12, 13, 15 Ω.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s5-12"><summary><span class="num">5.12</span><span class="t">Non-homogeneous soils</span><span class="pg">p. 135–140</span></summary><div class="body">
+  <p>Layers are usually reduced to two: thickness d₁ with ρ₁ over infinite ρ₂. The reflection coefficient k = (ρ₂ − ρ₁)/(ρ₁ + ρ₂) is positive when resistivity rises with depth. Mean resistivity ρ̄ = M₀·ρ₁, with M₀ from Table 5.10, gives d₁ from the measured curve. Rods reaching the lower layer use the penetration factor F<sub>K</sub> = (1+k)/(1−k+2k·d₁/L).</p>
+  <div class="fig"><h4>Two-layer apparent resistivity</h4><div id="layCalc"></div><figcaption>Eq. 5.40 summed to 40 terms. Defaults follow the book's example: 520 over 80 Ω·m, d₁ = 6.2 m.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s5-13"><summary><span class="num">5.13</span><span class="t">Practical installation rules</span><span class="pg">p. 140</span></summary><div class="body">
+  <ul>
+    <li>Lay counterpoises 0.5 to 1.0 m deep, below frost. Compact the backfill lightly, and keep gravel and stones away.</li>
+    <li>Replace corrosive soil. Install strips on edge.</li>
+    <li>Drive rods further apart than their length.</li>
+    <li>Bonds need the same conductivity and strength as the electrode, and must resist contact corrosion.</li>
+    <li>Keep connections short, protected and accessible. Air to soil or concrete transitions corrode most.</li>
+  </ul>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Crosswise electrode, p. 128 and 139.</b> Table 5.8 prints ρ/(2πL) in front of the bracket. The worked example uses ρ/(8πL) to reach 8.41 Ω. With 2π the result would be 33.6 Ω, against 11.4 Ω measured, so 8π appears right. The calculators use 8π.</li>
+    <li><b>Reflection coefficient sign, p. 139.</b> The example prints k = 0.73, but 520 over 80 Ω·m gives −0.73 by the book's own formula.</li>
+    <li><b>Largest difference, p. 134.</b> The text defines it with R<sub>E max</sub>, but Table 5.9's 25.7 % for tower B comes from the lowest value, 7.5 Ω. Using R<sub>E max</sub> gives 18.8 %, which would pass the 20 % test. The calculator takes the largest difference either way, as the table does.</li>
+  </ul>
+</div>

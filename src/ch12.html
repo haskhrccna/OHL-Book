@@ -1,0 +1,90 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>Supports hold conductors at safe clearances and carry their loads to the ground. Their function in the line sets the type: suspension, angle, strain or dead-end. Their head comes from clearances, their strength from load cases multiplied by partial factors. Most high-voltage supports are lattice steel: angle sections in axial force, where compression buckling and bolted connections govern. Poles of steel, concrete or wood use bending checks and deflection limits. Prototype tests prove the design.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">Supports set most of what the public sees and a major share of line cost. Design is iterative: tower weight feeds wind load, which feeds member sizes. Understanding which load case governs which member is the core skill.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Pick a support type for a task</li>
+      <li>Find phase spacing and insulator swing</li>
+      <li>Explain load cases and partial factors</li>
+      <li>Check compression, tension and bolts</li>
+      <li>Estimate tower and pole deflection</li>
+      <li>Outline a tower load test</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s12-1"><summary><span class="num">12.1</span><span class="t">Support types and applications</span><span class="pg">p. 354–360</span></summary><div class="body">
+  <div class="fig"><h4>Function in the line</h4><div id="fnStep"></div></div>
+  <div class="fig"><h4>Designs</h4><div id="dsgStep"></div></div>
+</div></details>
+
+<details class="sec" open id="s12-2"><summary><span class="num">12.2</span><span class="t">Tower top geometry</span><span class="pg">p. 361–366</span></summary><div class="body">
+  <p>Height comes from ground clearance. Spacing between phases comes from sag and thus span. Distance to earthed parts comes from insulators, electric stress and wind. The maximum span a tower family is designed for sets the phase spacing.</p>
+  <div class="fig"><h4>Phase spacing at midspan</h4><div id="cmCalc"></div><figcaption>Equations 12.1 and 12.4 with the German 58 % wind for three years return period, q<sub>z</sub> = 0.58·(q₀ + 3z), G<sub>xc</sub> = 0.45 + 60/a<sub>w</sub>, k₁ = 0.75. Defaults are the book's 220 kV example, giving 4.76 m horizontally. Not for spans over 1000 m, where 1 % of span has proved adequate.</figcaption></div>
+  <div class="fig"><h4>Angle suspension swing</h4><div id="asCalc"></div><figcaption>Eq. 12.8. Even without wind, tension pulls the string aside at a deflection, so these supports suit angles up to 20° and lower voltages.</figcaption></div>
+  <p>At supports, fittings often come nearest the tower. Clearance at an angle tower also needs the jumper loop, with a swing of 30° proved sufficient (Eq. 12.10). Big angles may need an auxiliary insulator set or weights. Different sized conductors should be checked with wind pressures 40 % apart.</p>
+</div></details>
+
+<details class="sec" open id="s12-3"><summary><span class="num">12.3</span><span class="t">Basic design requirements</span><span class="pg">p. 367–369</span></summary><div class="body">
+  <p>EN 50341-1 asks for <b>reliability</b> under defined conditions, <b>security</b> against cascades, and <b>safety</b> in construction and maintenance. Verification is by partial factors: design effect E<sub>d</sub> ≤ resistance R<sub>d</sub>, with F<sub>d</sub> = γ<sub>F</sub>·F<sub>K</sub> and R<sub>d</sub> = R<sub>K</sub>/γ<sub>M</sub>.</p>
+  <div class="fig"><h4>Static design loop</h4><div id="lpStep"></div></div>
+</div></details>
+
+<details class="sec" open id="s12-4"><summary><span class="num">12.4</span><span class="t">Load cases and partial factors</span><span class="pg">p. 369–374</span></summary><div class="body">
+  <div class="fig"><h4>German load cases, Table 12.2</h4><div id="lcStep"></div></div>
+  <div class="fig"><h4>One-sided tension reduction</h4><div id="trqCalc"></div><figcaption>EN 50341-3-4. Load case J is torsion on one conductor; load case K is longitudinal bending on all conductors.</figcaption></div>
+  <div class="fig"><h4>Partial factors on actions, Table 12.3</h4><div id="pfBars"></div><figcaption>EN 50341-1 General Approach at reliability levels 1, 2, 3, Empirical and German values. Accidental actions use 1.0. Construction loads use 1.5.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s12-5"><summary><span class="num">12.5</span><span class="t">Lattice steel towers</span><span class="pg">p. 374–441</span></summary><div class="body">
+  <div class="grid2">
+    <div><h4>Members and joints</h4><ul class="small"><li>Hot-rolled angles, up to L250 × 28, 133 cm².</li><li>Cruciform or compound sections beyond that.</li><li>Minimum thickness 4 mm, bolts M12, smallest L35 × 4.</li><li>No more than six bolts in a line.</li><li>Punching full size only to 12 mm in EN 50341-3-4, and not on permanently tensioned crossarm members.</li><li>End distance 1.2·d₀, edge 1.5·d₀, pitch 2.2·d₀.</li></ul></div>
+    <div><h4>Steel and corrosion</h4><ul class="small"><li>S235: f<sub>y</sub> 235, f<sub>u</sub> 360 N/mm². S355: 355, 510.</li><li>Bolts 4.6, 5.6, 8.8 and 10.9. Avoid 5.8 and 6.8 for low ductility.</li><li>Hot-dip galvanising loses 2 to 10 μm a year, so 10 to 15 years before more protection.</li><li>Silicon sets zinc thickness: S355 often looks dull grey.</li><li>Duplex coating, about 70 μm, more than doubles life.</li></ul></div>
+  </div>
+  <p><b>Member forces</b> come from a plane truss by sections, or a three-dimensional model. Y and portal towers need the latter: about 400 nodes and 600 members, so input errors are a real hazard.</p>
+  <div class="fig"><h4>Compression member check</h4><div id="bkCalc"></div><figcaption>Equations 12.60 to 12.66. κ from buckling curve c, α = 0.49 (design by calculation) or b, α = 0.34 (validated by tests, with λ̄<sub>eff</sub> cases not modelled here). λ<sub>a</sub> = π√(E/f<sub>y</sub>) = 93.9 for S235. Defaults: illustrative L100 × 8 with i<sub>vv</sub> = 19.5 mm. Effective area reductions apply if b/t exceeds 17 for S235 or 13.8 for S355.</figcaption></div>
+  <p>Staggered bracing uses 1.2·L/i<sub>yy</sub>. Thin angles at low slenderness can fail in flexural torsional buckling, λ<sub>vi</sub> ≈ 5·b/t, or the better Eq. 12.80. Bracings on one leg suffer eccentricity, cancelled by end restraint at λ̄ = √2.</p>
+  <div class="fig"><h4>Tension member with staggered holes</h4><div id="tnCalc"></div><figcaption>N<sub>Rd</sub> is the lower of 0.9·A<sub>net</sub>·f<sub>u</sub>/1.25 and A·f<sub>y</sub>/1.1. Staggered paths add s²t/(4p) per gauge space. Default is the book's L100 × 8 example, 1265 mm² at section II.</figcaption></div>
+  <div class="fig"><h4>Bolt shear and bearing</h4><div id="blCalc"></div><figcaption>F<sub>v</sub> = 0.6·f<sub>ub</sub>·A/1.25 per shear plane, F<sub>b</sub> = α<sub>b</sub>·f<sub>u</sub>·d·t/1.25, with α<sub>b</sub> the smallest of Equations 12.107 to 12.110. Shank area is used, so the shear plane is taken through the unthreaded part. Connection failure should show as hole deformation, never as a bolt shearing off.</figcaption></div>
+  <div class="fig"><h4>Redundant member</h4><div id="rdCalc"></div><figcaption>Eq. 12.115: K = (λ + 32)/60, between 1 and 2, gives 1 to 2 % of the leg force. Only one force is assumed at a time. It stabilises the leg by cutting buckling length.</figcaption></div>
+  <div class="fig"><h4>Tower top deflection</h4><div id="dfCalc"></div><figcaption>Bending of a tapered tower reduced to an equivalent stiffness, EI × 0.9 for bracing elasticity, Eq. 12.118 and 12.120, plus 4 mm of slip per joint. Inputs are illustrative. Under maximum load, the rise over everyday deflection is limited to 0.5 m. Angle and dead-end towers are erected tilted to end up vertical.</figcaption></div>
+  <p class="small"><b>Upgrading.</b> Swap bracings. Add redundants if flexural buckling governs and tension is sufficient. Add angles via batten plates to form cruciform legs, using fitted bolts rather than welding, with at least one third of buckling length spacing and 2.5 % shear force. The existing leg stays loaded while the new angle is added, so it carries more than its share.</p>
+</div></details>
+
+<details class="sec" open id="s12-6"><summary><span class="num">12.6</span><span class="t">Steel poles</span><span class="pg">p. 442–448</span></summary><div class="body">
+  <p>Polygonal 8, 12 or 16-sided cones, in lengths to about 15 m, joined by slip joints (overlap 1.5 × diameter, slope at least 10 mm/m, wall to 16 mm) or bolted flanges. Second order moments are needed: M<sub>II</sub> = 1.05·M<sub>I</sub> or 1.03·M<sub>I</sub> as a German shortcut. Thick coatings last 20 years.</p>
+  <div class="fig"><h4>Polygonal section check</h4><div id="plCalc"></div><figcaption>I = k<sub>I</sub>·b³·t, Table 12.24. Local buckling is no hazard if b/t ≤ 42 for S235 or 34 for S355. Otherwise use effective sections. Deflection limits: 4 % of length for suspension, 2.5 % for strain, and the 0.5 m rule.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s12-7"><summary><span class="num">12.7</span><span class="t">Concrete poles</span><span class="pg">p. 449–458</span></summary><div class="body">
+  <div class="scroll"><table style="min-width:480px"><tr><th>Type</th><th>Concrete</th><th>Notes</th></tr><tr><td>Spun</td><td>Up to C 100/115</td><td>Conical, 15 mm/m taper or more, dense, prestress closes cracks. At least 440 kg cement/m³, wall 50 mm or more.</td></tr><tr><td>Vibrated</td><td>C 30/37</td><td>Site production for a project, up to about 12 m. At least 320 kg cement/m³.</td></tr></table></div>
+  <p>A pole is usually selected from a catalogue by its characteristic load, the top force giving the same base moment: S<sub>H</sub> = ΣS<sub>Hi</sub>·h<sub>i</sub>/L<sub>M</sub>, 0.25 m below the top. Concrete design strength is f<sub>cd</sub> = 0.85·f<sub>ck</sub>/γ<sub>c</sub>.</p>
+  <div class="fig"><h4>Characteristic load</h4><div id="ccCalc"></div></div>
+</div></details>
+
+<details class="sec" open id="s12-8"><summary><span class="num">12.8</span><span class="t">Wood poles</span><span class="pg">p. 459–461</span></summary><div class="body">
+  <p>Spans up to about 50 m with single poles, up to 250 m with portals, H-frames up to 345 kV. Decay fastest at the ground line, so high safety factors of 4 to 10 apply and poles are treated with creosote or similar, for 30 years at least. Double poles count three times the modulus in their plane, twice otherwise.</p>
+  <div class="fig"><h4>Wood pole stress and deflection</h4><div id="wdCalc"></div><figcaption>Equations 12.144 to 12.146, E = 10 000 N/mm². Taken with h as height above ground. Limit deflection to 10 % of length.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s12-9"><summary><span class="num">12.9</span><span class="t">Loading and failing tests</span><span class="pg">p. 461–466</span></summary><div class="body">
+  <div class="fig"><h4>A proof test</h4><div id="tstStep"></div></div>
+  <div class="fig"><h4>Load steps</h4><div id="tstBars"></div><figcaption>Hold at each step, 1 to 5 minutes at 100 %. Load error up to 5 % in design tests, 10 % in acceptance tests. Rigid foundations, static loads, so a test does not fully show behaviour in a line.</figcaption></div>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Table reference, p. 362.</b> The text cites Table 2.21 for k<sub>c</sub>. It is Table 2.22, as the example below it says.</li>
+    <li><b>Mountable members.</b> Here members up to 30° from horizontal must carry 1.0 kN, p. 416. In Chapter 6, EN 50341-1 is quoted as under 60°, p. 186. These cannot both describe the same rule.</li>
+    <li><b>Vibrator frequency, p. 453.</b> "15000 Hz" for vibrators appears implausibly high and may mean revolutions per minute.</li>
+    <li><b>Standard number, p. 370.</b> Table 12.1's caption prints EN 50431-1 for EN 50341-1.</li>
+  </ul>
+  <p class="small muted">Coverage note: this chapter runs to 112 pages. Detailed plane and space truss derivations, compound member formulae, and the long tower and pole calculation tables were read only in outline and are summarised rather than reproduced.</p>
+</div>

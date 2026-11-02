@@ -1,0 +1,72 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>Every network study treats a line as a few numbers per kilometre: resistance, reactance and capacitance, in positive and zero sequence. Positive sequence is normal balanced operation. Zero sequence is what a phase-to-ground fault sees, with current returning through earth and earth wires. Short lines need only series impedance, medium lines a nominal Π-circuit, and long lines the exact hyperbolic equations or an equivalent Π-circuit that gives the same answer.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">These parameters feed load flows, losses, short-circuit and stability studies, relay settings and compensation design. A wrong zero-sequence value means a wrong fault current and a wrong protection setting.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Correct resistance for temperature and bundle size</li>
+      <li>Calculate bundle equivalent radius and X₁</li>
+      <li>Find zero-sequence impedance with earth wires</li>
+      <li>Calculate capacitance and admittance</li>
+      <li>Pick short, medium or long line models</li>
+      <li>Solve a long line for sending-end voltage and losses</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s3-1"><summary><span class="num">3.1</span><span class="t">Introduction</span><span class="pg">p. 80–81</span></summary><div class="body">
+  <p>Conductor properties and the physical arrangement on the tower together give the line parameters. Studies use symmetrical components: positive, negative and zero sequence impedances.</p>
+  <div class="fig"><h4>Positive against zero sequence currents</h4><div class="row" id="seqBtn"></div><div class="grid2"><div id="seqFig"></div><div class="out" id="seqOut"></div></div></div>
+</div></details>
+
+<details class="sec" open id="s3-2"><summary><span class="num">3.2</span><span class="t">Resistance</span><span class="pg">p. 81–82</span></summary><div class="body">
+  <p>DC resistance per unit length is ρ/A. AC resistance can be higher through skin and spiral effects (Eq. 7.16). A bundle's resistance is that of one subconductor divided by n₂. Annealed copper at 58 m/(Ω·mm²) is the 100 % IACS reference; hard-drawn copper is about 97 %, hard-drawn aluminium 61 %.</p>
+  <div class="fig"><h4>Resistance and temperature</h4><div id="resCalc"></div><figcaption>Eq. 3.2. Defaults are the 494-AL1/34-ST1A triple bundle, 0.0584 Ω/km at 20 °C, α = 0.00403 /K, giving the book's 0.0218 Ω/km at 50 °C. For loss studies the book advises 40 to 50 °C, as real temperatures stay below theoretical ones.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s3-3"><summary><span class="num">3.3</span><span class="t">Positive-sequence impedance</span><span class="pg">p. 82–85</span></summary><div class="body">
+  <p>Z₁' = R₁' + jX₁'. Reactance depends only logarithmically on geometry, so X₁' changes little across voltage levels unless bundling raises the equivalent radius. A fully transposed line has each phase order for one third of its length.</p>
+  <div class="fig"><h4>Bundle explorer</h4><div id="bunCalc"></div><figcaption>Equations 3.5, 3.6 and 3.13. k₁ = n<sup>1/(n−1)</sup>/[2·sin(π/n)]. At s = 400 mm, r = 14.8 mm, n = 3 and D<sub>M</sub> = 15.75 m this gives the book's 0.134 m and 0.3046 Ω/km.</figcaption></div>
+  <div class="fig"><h4>Typical lines, Table 3.2</h4><div id="t32Calc"></div><figcaption>Values at 50 Hz. R₁' at 50 °C. Zero-sequence data for one circuit with two earth wires, except 20 kV which has none.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s3-4"><summary><span class="num">3.4</span><span class="t">Zero-sequence impedance</span><span class="pg">p. 85–88</span></summary><div class="body">
+  <p>Zero-sequence currents are equal and in phase, so they must return through earth or earth wires. The field differs greatly, and X₀ is 1.5 to 4 times X₁. Its main use is phase-to-ground fault current and ground relay settings. Simplified formulae derive from Pollaczek and Carson.</p>
+  <div class="eq">δ = 1.85 / √(ω·μ₀/ρ<sub>E</sub>) &nbsp; return depth of earth current (3.15)</div>
+  <div class="fig"><h4>What earth wires do to Z₀</h4><div id="z0Calc"></div><figcaption>Single circuit with two earth wires, Equations 3.14 to 3.22, using the book's 500 kV line. Defaults reproduce 0.170 + j1.177 and 0.232 + j0.802 Ω/km. Earth wires return part of the current, cutting X₀ and raising R₀. Note how weakly earth resistivity acts, through a logarithm.</figcaption></div>
+  <p class="small">Relative permeability: about 1 for copper, aluminium and ACSR with Al:St ratio of 6 or more, 5 to 10 for ACSR with one aluminium layer, and about 25 for steel earth wires.</p>
+</div></details>
+
+<details class="sec" open id="s3-5"><summary><span class="num">3.5</span><span class="t">Capacitance and capacitive reactance</span><span class="pg">p. 88–91</span></summary><div class="body">
+  <p>Conductors, earth wires and ground form a capacitance network. X<sub>c</sub> = 1/(2πfC). Converting the delta of phase-to-phase capacitances C to a star gives <b>C₁ = C₀ + 3C</b> (3.29).</p>
+  <div class="grid2">
+    <div class="fig"><h4>Capacitance network</h4><div id="capFig"></div><figcaption>C between phases, C₀ to ground.</figcaption></div>
+    <div class="fig"><h4>Check Eq. 3.29 and 3.33</h4><div id="capCalc"></div><figcaption>Defaults give about 12.0 nF/km as in the book. Earth wires alter C₀ only, not C₁.</figcaption></div>
+  </div>
+</div></details>
+
+<details class="sec" open id="s3-6"><summary><span class="num">3.6</span><span class="t">Admittance</span><span class="pg">p. 91</span></summary><div class="body">
+  <p>Y' = G' + jB'. For overhead lines the conductance G' is very small and neglected, so Y' ≈ jB' = 1/X<sub>c</sub>. The book's line: 2π·50·12.0 nF/km = 3.77 μS/km positive sequence and 2.87 μS/km zero sequence.</p>
+</div></details>
+
+<details class="sec" open id="s3-7"><summary><span class="num">3.7</span><span class="t">Electric representation of lines</span><span class="pg">p. 92–97</span></summary><div class="body">
+  <div class="fig"><h4>Choosing a model</h4><div id="modStep"></div></div>
+  <div class="fig"><h4>Long line solver</h4><div id="llCalc"></div><figcaption>Exact Equations 3.57 and 3.58, with the 500 kV line R' = 0.0218 Ω/km, X' = 0.3046 Ω/km, Y' = 3.77 μS/km, unity power factor load, 500 kV at the receiving end. Set load to zero to see the Ferranti rise. At the surge impedance load, about 878 MW for this line, the profile is nearly flat.</figcaption></div>
+  <div class="fig"><h4>How wrong is the nominal Π-circuit?</h4><div id="piChart"></div><figcaption>Size of the series impedance from the nominal circuit against the exact equivalent Eq. 3.61, for this line. The difference grows with length, which is why the book recommends the equivalent circuit for long lines.</figcaption></div>
+  <p class="small">Wave length is λ = 2π/β, about 5870 km at 50 Hz and 4895 km at 60 Hz. Velocity is f·λ. A line terminated in Z<sub>c</sub> has no reflected wave: a <b>flat</b> or infinite line. The angle of Z<sub>c</sub> is usually between 0 and −15°.</p>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Same line, three answers, p. 95 to 97.</b> The exponential solution gives 519.5 kV, the hyperbolic one 520.3 kV, and the power line then uses 520.5 kV. An unrounded solution gives 519.7 kV, 1026 MW sending power and 26 MW losses, where the book prints 1028 and 28 MW. The differences come from rounding. The solver here uses unrounded values.</li>
+    <li><b>Phase constant, p. 95.</b> β is printed as 1.042·10⁻³, but 1.073·10⁻³ at 87.95° gives 1.072·10⁻³, and the 5861 km wave length only follows from that value.</li>
+    <li><b>Equation reference, p. 96.</b> "Equation (3.59) yields" U<sub>s</sub>, but the calculation shown is (3.57).</li>
+    <li><b>Equivalent series resistance, p. 97.</b> Table 3.3 lists 6.45 Ω. Unrounded values give 6.32 Ω; 90.15∠85.9° is sensitive to the rounded angle.</li>
+  </ul>
+</div>

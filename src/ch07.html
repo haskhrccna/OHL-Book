@@ -1,0 +1,66 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>Conductors carry the power and take 30 to 50 % of line investment. Most are aluminium stranded over steel: aluminium for conduction, steel for strength, with creep moving load onto the steel over time. A conductor is chosen by checking four things: current it can carry without overheating, cost of losses over its life, surface gradient at the working voltage, and mechanical stress in everyday and extreme conditions. Bundles beat one large conductor on nearly all counts at high voltage.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">The conductor is the line's largest single purchase, and losses go on costing for decades. It also sets tower loads and sags. A choice made only on current often turns out to be wrong economically.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Read designations such as 243-AL1/39-ST1A</li>
+      <li>Find composite properties and wire stresses</li>
+      <li>Calculate ampacity from the heat balance</li>
+      <li>Find the economic cross section</li>
+      <li>Compare bundles for surge impedance and gradient</li>
+      <li>Check everyday and extreme stress limits</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s7-1"><summary><span class="num">7.1</span><span class="t">Conductor types and design</span><span class="pg">p. 195–222</span></summary><div class="body">
+  <div class="fig"><h4>Read a designation</h4><div id="desStep"></div></div>
+  <div class="fig"><h4>How conductors developed</h4><div id="hisStep"></div></div>
+  <div class="fig"><h4>Materials, Tables 7.4 and 7.5</h4><div id="matCalc"></div><figcaption>AL1 is 99.5 % aluminium. Alloys AL2 to AL7 are about 1.6 times stronger, at 86 to 93 % of aluminium's conductivity. Hard aluminium recrystallises above 100 °C, so ordinary conductors stop at 80 °C. Zirconium alloys (TAL) raise that, allowing 150 °C.</figcaption></div>
+  <div class="fig"><h4>Composite conductor calculator</h4><div id="compCalc"></div><figcaption>Equations 7.2 to 7.8 with E<sub>Al</sub> = 60 and E<sub>Fe</sub> = 207 kN/mm². Real stresses differ because each layer strands differently, so these are estimates. See the note at the end on the book's examples.</figcaption></div>
+  <div class="fig"><h4>Conductor browser, Table 7.9</h4><div id="acsrCalc"></div><figcaption>EN 50182 AL1/ST1A conductors. Current at 35 °C ambient, 80 °C conductor, 0.6 m/s wind, 900 W/m² sun.</figcaption></div>
+  <div class="grid2">
+    <div><h4>Why composite works</h4><p class="small">Aluminium creeps, steel hardly does. Over time the aluminium stress falls and steel stress rises, which improves resistance to vibration fatigue. Mono-metallic conductors cannot shift load this way and are more prone to fatigue. Grease the steel core: at minimum case 1, core only. Do not grease the outer layer, as it can cause corona and affect clamps.</p></div>
+    <div><h4>Stress-strain test</h4><p class="small">Sample at least 400 × diameter and 10 m. Load in steps to 30, 50, 70 and 85 % RTS, holding each, then to failure. Failure at 95 % RTS or above passes. Creep follows ε = ε<sub>1h</sub>·tⁿ, a straight line on log-log axes, extrapolated to 100 000 hours.</p></div>
+  </div>
+  <div class="fig"><h4>Creep over time</h4><div id="crpCalc"></div><figcaption>Eq. 7.10. The inputs are illustrative. Clause 16.8.5.3 gives real values.</figcaption></div>
+  <p><b>Bundles.</b> Corona at 220 kV in 1929 drove the move to larger diameters and then to bundles, patented in 1930. Lines at 420 kV and above are not feasible without them. Usual spacing is 400 mm in Europe, 457 mm in North America, and over 18 × subconductor diameter to counter subspan oscillation.</p>
+  <div class="fig"><h4>Twin bundle or one large conductor at 220 kV</h4><div class="scroll"><table style="min-width:440px"><tr><th>Quantity</th><th>2 × 243-AL1/39-ST1A</th><th>1 × 490-AL1/64-ST1A</th></tr><tr><td>Current</td><td>1290 A</td><td>960 A</td></tr><tr><td>Surge impedance</td><td>300 Ω</td><td>360 Ω</td></tr><tr><td>Surface gradient</td><td>15.6 kV/cm</td><td>16.0 kV/cm</td></tr><tr><td>Audible noise</td><td>About 40 dB(A)</td><td>About 50 dB(A)</td></tr></table></div></div>
+  <div class="fig"><h4>Special conductors</h4><div id="spcStep"></div></div>
+</div></details>
+
+<details class="sec" open id="s7-2"><summary><span class="num">7.2</span><span class="t">Design for current</span><span class="pg">p. 223–232</span></summary><div class="body">
+  <p>In steady state, heat in equals heat out: Joule + magnetic + solar = radiation + convection (7.14). For short circuits the heating is adiabatic, covered in Chapter 8. EN 50341-3-4 permits 80 °C for AL1/ST1A, AL3/ST1A, AL1 and AL3, and 70 °C for copper.</p>
+  <div class="fig"><h4>Ampacity from the heat balance</h4><div id="ampCalc"></div><figcaption>Equations 7.16 to 7.31 for the listed conductors, air data interpolated from Table 7.15, k<sub>e</sub> = 0.6, k<sub>a</sub> = 0.5. AC resistance is taken 2 % above DC, an assumption of mine. For 562-AL1/49-ST1A at standard conditions the simpler radiation formula gives 1040 A, matching the book. Other conductors land about 3 % from Table 7.9.</figcaption></div>
+  <div class="fig"><h4>Economic cross section</h4><div id="ecoCalc"></div><figcaption>Equations 7.32 to 7.41. A<sub>opt</sub> = I·√[(p₂·E<sub>p</sub> + p₃·t<sub>L</sub>)·R/(0.5·p₁·E₂)], with p₁ = p₂ = 0.15 /year, R = 0.0849 and E₂ = 400 EUR/(mm²·km) for a single conductor. Defaults give 324 mm². The curve shows costs per km of circuit.</figcaption></div>
+  <p>Fixed ratings use cautious weather. In reality the wind exceeds 1 m/s over 98 % of the time, so weather-based forecasts can raise capacity by 25 to 30 %. This suits exceptional operation only, as continuous running at the limit wastes energy.</p>
+</div></details>
+
+<details class="sec" open id="s7-3"><summary><span class="num">7.3</span><span class="t">Design for voltage stress</span><span class="pg">p. 233–235</span></summary><div class="body">
+  <div class="fig"><h4>400 kV double circuit options, Table 7.16</h4><div id="t716"></div><figcaption>Subconductor spacing 0.4 m, except the last row with 1.0 m. The wide spacing lifts natural power 20 %, but pushes gradient above 17 kV/cm, so it is unsuited to densely populated regions.</figcaption></div>
+  <p>Gradients vary by phase. In the book's quad example they are 12.6, 15.4 and 16.0 kV/cm. <b>Corona losses</b> matter above 300 kV: about 2 kW/km fair, 5 rainy, up to 100 frosty. They do not affect conductor selection, and do not peak with Joule losses because foul weather cools conductors.</p>
+</div></details>
+
+<details class="sec" open id="s7-4"><summary><span class="num">7.4</span><span class="t">Mechanical design</span><span class="pg">p. 235–239</span></summary><div class="body">
+  <p>Limits work at two ends. <b>Extreme loads:</b> tension may not exceed RTS/1.25. EN 50341-3-4 also multiplies worst case stress by 1.30 and compares with long-term stress. <b>Everyday stress:</b> keeps vibration fatigue away. It often sets stringing tension at 110 kV and above.</p>
+  <div class="fig"><h4>Stress limits, Table 7.17</h4><div id="strCalc"></div><figcaption>N/mm². Everyday and long-term limits with rated strength for each conductor type.</figcaption></div>
+  <p class="small">Conductors with a small steel share, mono-metallic ones, over 25 mm diameter or in spans above 500 m are more prone to fatigue. A higher everyday stress lowers towers, but raises loads on angle towers. At 20 % more EDS on a 220 kV line, investment fell 4 % with 10 % strain towers, and stayed level with 20 %. The Elbe crossing optimum was near 70 N/mm². Allow for creep with lower initial sags.</p>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Conductor share of cost.</b> "30 to 50 %" here against "30 to 35 %" in Chapter 1.</li>
+    <li><b>Wire stress examples, p. 211.</b> The results 45.8 and 144.8 N/mm², and 51.0 and 161.1 N/mm², need E<sub>Fe</sub>/E<sub>Al</sub> = 3.16. Table 7.5's 207/60 is 3.45, which gives 44.4 and 153. The calculator uses Table 7.5.</li>
+    <li><b>Eq. 7.17, p. 225.</b> Prints 0.25 + x + 3/64. The usual form is 3/(64x); I have flagged this from general knowledge, not the book. For x near 1 the difference is nil, so it does not change results here.</li>
+    <li><b>Current of 243-AL1/39-ST1A.</b> Table 7.9 gives 645 A, the TAL comparison 650 A.</li>
+    <li><b>Worked example, p. 237 to 238.</b> Prints diameter "21,0 m" (mm); ice 28.2 N/m in text and 28.4 in Table 7.18; 16.78 and 16.80 N/m for wind; 29.90 and 29.09 for wind with ice.</li>
+    <li><b>Figure 7.12 caption.</b> "4000 kV line" should be 400 kV.</li>
+  </ul>
+</div>

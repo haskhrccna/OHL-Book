@@ -1,0 +1,184 @@
+  <div class="grid2">
+    <div style="display:grid;gap:10px;align-content:start">
+      <h2>The chapter in 60 seconds</h2>
+      <p>A line takes many years to get from idea to energising, so planning starts long before construction. Planners forecast demand, list alternatives, screen them with electrical studies, then pick the cheapest one over its life that still meets the criteria, chiefly (n−1). The result fixes voltage, conductors, circuits, tower type and AC or DC. Overhead lines remain the economic default; cables cost on average 20 times more per unit of power at the highest voltages.</p>
+    </div>
+    <div class="note">
+      <h4>Why it matters</h4>
+      <p class="small">Each decision here locks in the next. Voltage sets capacity, capacity sets conductors, conductors are 30 to 35 % of the line's cost, and the tower carries all of it for decades. An early mistake costs far more to fix than it did to avoid.</p>
+      <h4>After this chapter you can</h4>
+      <ul class="small">
+        <li>Order the stages of a line project and the three planning horizons</li>
+        <li>Apply the (n−1) criterion and the usual limits</li>
+        <li>Choose candidate voltages from power and distance</li>
+        <li>Compare AC with DC, and overhead with cable</li>
+        <li>Estimate line investment with Equations 1.6 to 1.9</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+  <div class="chips" id="chips"></div>
+
+  <details class="sec" open id="s1-1"><summary><span class="num">1.1</span><span class="t">Development stages of a project</span><span class="pg">p. 1–2</span></summary><div class="body">
+    <p>A project starts years before anything is built. Select a stage to see what happens in it.</p>
+    <div class="steps" id="stages"></div>
+    <div class="out" id="stageOut" style="font-family:var(--body)"></div>
+  </div></details>
+
+  <details class="sec" open id="s1-2"><summary><span class="num">1.2</span><span class="t">Transmission planning</span><span class="pg">p. 2–3</span></summary><div class="body">
+    <p>The goal is to meet demand at the specified quality and reliability for minimum cost. Planning is continuous, because each plan only reflects what is known at that moment.</p>
+    <figure class="fig"><div class="scroll"><div id="hz" style="min-width:500px"></div></div><figcaption>Planning horizons as described in the text (p. 2–3). Table 1.1 lists single figures of 15, 10 and 3 years. The book stresses the stage boundaries are somewhat arbitrary.</figcaption></figure>
+    <div class="scroll"><table>
+      <tr><th></th><th>Long-term</th><th>Medium-term</th><th>Operation (short-term)</th></tr>
+      <tr><th>Considers</th><td>Required power, overloads, stability</td><td>Those, plus voltage levels and short circuit</td><td>Same as medium-term</td></tr>
+      <tr><th>Defines</th><td>Capacity, voltage levels, terminal areas, approximate years</td><td>Capacity, losses, operating voltages, terminal substations, years of operation</td><td>Operational constraints, lines to uprate or upgrade, earlier dates for planned facilities</td></tr>
+      <tr><th>Model size</th><td>Area or supply region</td><td>Interconnected system</td><td>Utility system</td></tr>
+    </table></div>
+    <div class="note small"><h4>Four questions planning must answer</h4><p><b>When</b> is a new or uprated line needed? <b>Where</b>, and at what quality and rating? <b>What type</b>: overhead or cable, AC or DC? <b>What voltage</b> and how many circuits?</p></div>
+  </div></details>
+
+  <details class="sec" open id="s1-3"><summary><span class="num">1.3</span><span class="t">Planning methods</span><span class="pg">p. 3–4</span></summary><div class="body">
+    <p>Planning narrows many options to one. Sites take three to ten or more years to obtain, which is why decisions rest on long-term load forecasts.</p>
+    <figure class="fig"><div class="scroll"><div id="funnel" style="min-width:520px"></div></div><figcaption>The four steps of Section 1.3. Width shows narrowing, not a real count of alternatives.</figcaption></figure>
+    <p class="small">The final choice is not purely numerical. Utility experience, local standards and availability of spare parts also count.</p>
+  </div></details>
+
+  <details class="sec" open id="s1-4"><summary><span class="num">1.4</span><span class="t">Planning criteria and (n−1)</span><span class="pg">p. 4–5</span></summary><div class="body">
+    <p>The basic rule: no load may be lost after a single contingency. Under the (n−1) criterion the system, at heavy and at light load, must survive the outage of any one component, one at a time.</p>
+    <figure class="fig">
+      <div class="scroll"><div id="n1" style="min-width:480px"></div></div>
+      <div class="grid2"><label class="f">Load to supply: <span id="n1v" class="mono"></span><input type="range" id="n1load" min="200" max="1500" step="10" value="800"></label>
+      <div class="row" id="n1btn"></div></div>
+      <div class="out" id="n1out"></div>
+      <figcaption>Illustrative example, not from the book: three circuits rated 500 MVA each. Trip circuits and raise the load to find where (n−1) fails.</figcaption>
+    </figure>
+    <figure class="fig"><div class="scroll"><div id="limits" style="min-width:500px"></div></div><figcaption>The usual limits from p. 5. The voltage band is in per unit. Bars show the highest permitted value.</figcaption></figure>
+  </div></details>
+
+  <details class="sec" open id="s1-5"><summary><span class="num">1.5</span><span class="t">Evolution and selection of voltage</span><span class="pg">p. 5–8</span></summary><div class="body">
+    <p>Line capability grows with the square of voltage, which is why voltages kept climbing. Select a milestone.</p>
+    <figure class="fig"><div class="scroll"><div id="hist" style="min-width:480px"></div></div><div class="out" id="histOut" style="font-family:var(--body)"></div><figcaption>Drawn from the milestones listed on p. 5. The line in 1891 carried about 200 kW over 175 km at 15 kV and 40 Hz.</figcaption></figure>
+    <div class="grid2">
+      <figure class="fig"><h4>Voltage class finder</h4><div id="cls"></div><label class="f">Voltage in kV<input type="number" id="clsv" value="380" min="0.1" step="1"></label><div class="out" id="clsOut"></div><figcaption>Classes per EN 60071 as given on p. 6. Note the book leaves 750 to 800 kV unassigned.</figcaption></figure>
+      <figure class="fig"><h4>Capability grows with U²</h4><label class="f">From (kV)<input type="number" id="sqa" value="110" min="1"></label><label class="f">To (kV)<input type="number" id="sqb" value="220" min="1"></label><div class="out" id="sqOut"></div><figcaption>Relation stated on p. 6.</figcaption></figure>
+    </div>
+    <figure class="fig">
+      <h4>Voltage selector, after Figure 1.2</h4>
+      <div class="scroll"><div id="sel" style="min-width:320px"></div></div>
+      <div class="grid2">
+        <label class="f">Power per circuit: <span class="mono" id="selPv"></span><input type="range" id="selP" min="1" max="3.4" step="0.01" value="2.7"></label>
+        <label class="f">Length: <span class="mono" id="selLv"></span><input type="range" id="selL" min="1" max="2.85" step="0.01" value="2.3"></label>
+      </div>
+      <div class="out" id="selOut"></div>
+      <figcaption>Tap the chart or move the sliders. Boundaries were read by eye from the printed Figure 1.2 (p. 7), so treat them as approximate. Bands overlap: a point inside several gives several candidates, and economics decide. The figure labels the top band 700 kV.</figcaption>
+    </figure>
+    <figure class="fig">
+      <h4>Thermal limit against surge impedance load</h4>
+      <div class="scroll"><div id="t13" style="min-width:420px"></div></div>
+      <figcaption>Table 1.3 (p. 7), logarithmic scale. Surge impedance falls with bundling, from 400 Ω at 20 kV to 259 Ω at 750 kV. No surge impedance load is listed for 20 kV.</figcaption>
+    </figure>
+    <p class="small">EHV choices also weigh interconnection, reliability and higher short-circuit current. Series capacitors, static compensators, FACTS and high surge impedance load lines can change the answer, and so can HVDC.</p>
+  </div></details>
+
+  <details class="sec" open id="s1-6"><summary><span class="num">1.6</span><span class="t">Conductor selection</span><span class="pg">p. 8</span></summary><div class="body">
+    <div class="grid2">
+      <figure class="fig"><div id="share"></div><figcaption>Conductors take 30 to 35 % of total line investment (p. 8). Section 1.10 gives a wider share for circuits, which include more than the conductor.</figcaption></figure>
+      <div class="scroll"><table>
+        <tr><th>Material</th><th>Why used</th><th>Limitation</th></tr>
+        <tr><td>Copper</td><td>First used</td><td>Heavy for its strength, costly</td></tr>
+        <tr><td>Aluminium (about 1900)</td><td>Cheaper; about 62 % of copper's conductivity</td><td>Too weak for long spans</td></tr>
+        <tr><td>ACSR</td><td>Good electrical properties plus steel strength</td><td>Core can corrode in aggressive environments</td></tr>
+        <tr><td>Aluminium alloy</td><td>Behaves like ACSR</td><td>Avoids that corrosion problem</td></tr>
+      </table></div>
+    </div>
+    <p>The best conductor balances mechanical and electrical properties, investment, and the cost of losses over the line's life, with all costs reduced to present value. Corona and environmental effects (fields, radio interference, audible noise) also constrain the choice.</p>
+  </div></details>
+
+  <details class="sec" open id="s1-7"><summary><span class="num">1.7</span><span class="t">Selection of line configuration</span><span class="pg">p. 9–11</span></summary><div class="body">
+    <p>Configuration follows voltage, number of circuits, conductors, shield wires, field limits, noise, appearance and right-of-way. Select a type.</p>
+    <figure class="fig"><div class="row" id="tw"></div><div class="grid2"><div id="twSvg"></div><div class="out" id="twOut" style="font-family:var(--body);align-content:start"></div></div><figcaption>Simplified schematics drawn for this guide, not to scale. Compare with Figures 1.3 to 1.8 in the book.</figcaption></figure>
+  </div></details>
+
+  <details class="sec" open id="s1-8"><summary><span class="num">1.8</span><span class="t">Direct current transmission</span><span class="pg">p. 12–14</span></summary><div class="body">
+    <p>With U<sub>DC</sub> = √2 · U<sub>AC</sub> and equal current, two DC poles carry about the same power as three AC phases. That saves a third of the conductor.</p>
+    <div class="grid2">
+      <figure class="fig"><div id="dcr"></div><label class="f">cos φ: <span class="mono" id="cosv"></span><input type="range" id="cos" min="0.8" max="1" step="0.005" value="0.945"></label><div class="out" id="cosOut"></div><figcaption>Equation 1.4 (p. 12): P<sub>DC</sub>/P<sub>AC</sub> = 2√2 / (3 cos φ).</figcaption></figure>
+      <figure class="fig"><div id="be"></div>
+        <label class="f">AC line cost: <span class="mono" id="beAv"></span><input type="range" id="beA" min="200" max="1200" step="50" value="500"></label>
+        <label class="f">Both converter stations: <span class="mono" id="beCv"></span><input type="range" id="beC" min="40" max="400" step="10" value="120"></label>
+        <div class="out" id="beOut"></div>
+        <figcaption>Break-even sketch. DC line at 70 % of AC (p. 13). The cost inputs are invented examples; defaults land on the book's rough 800 km. The book says no universal distance exists.</figcaption></figure>
+    </div>
+    <div class="grid2">
+      <div class="note small"><h4 class="good">For DC</h4><ul><li>Lower power losses: ohmic losses 25 to 35 % lower</li><li>Lower switching overvoltages, so smaller tower clearances</li><li>No stability issue: systems need not be in synchronism</li><li>Links different frequencies back to back</li><li>Adds little to neighbouring short-circuit levels</li></ul></div>
+      <div class="note small"><h4 class="bad">Against DC</h4><ul><li>Needs expensive converter stations at both ends</li><li>Cannot economically be tapped by intermediate substations</li><li>Converters need reactive power up to 60 % of active power</li><li>Pollution makes insulation harder: creepage path about 30 % longer in the example</li></ul></div>
+    </div>
+    <p class="small">Practice: a DC line costs around 70 % of the equivalent AC line, but only long routes offset the converters. DC is also often chosen for underwater crossings. Guyed towers are usually preferred for ±600 kV (Itaipu) because they cost less.</p>
+  </div></details>
+
+  <details class="sec" open id="s1-9"><summary><span class="num">1.9</span><span class="t">Higher order phase lines</span><span class="pg">p. 14–16</span></summary><div class="body">
+    <p>More phases can raise power density in an existing corridor. Six and twelve phases are the favoured options. Phase-to-ground voltage becomes the reference, because adjacent phases sit closer in voltage.</p>
+    <figure class="fig"><div class="grid2"><div id="ph"></div><div style="display:grid;gap:10px;align-content:start">
+      <label class="f">Number of phases<select id="phN"><option>3</option><option>6</option><option selected>12</option><option>24</option><option>36</option></select></label>
+      <label class="f">Phase-to-ground voltage (kV)<select id="phU"><option>80</option><option selected>133</option><option>199</option><option>289</option><option>433</option></select></label>
+      <div class="out" id="phOut"></div></div></div>
+      <figcaption>Results match Table 1.4 (p. 14). The formula U<sub>pp</sub> = 2 U<sub>pg</sub> sin(π/N) is added context: it is not printed in this chapter, but it reproduces every value in the table.</figcaption></figure>
+    <figure class="fig"><div class="scroll"><div id="t15" style="min-width:420px"></div></div><figcaption>Table 1.5 (p. 15): a 138 kV twelve-phase line designed to match a 345 kV three-phase line. Each pair is scaled to its own larger value.</figcaption></figure>
+    <div class="note small"><h4>The catch</h4><p>Every terminal needs six-pole (or more) transformers, breakers and bus bars, which is costly and makes protection difficult when tied into three-phase systems. Flashover between phases also becomes more likely. Use is limited to a few lines.</p></div>
+  </div></details>
+
+  <details class="sec" open id="s1-10"><summary><span class="num">1.10</span><span class="t">Investments</span><span class="pg">p. 16–17</span></summary><div class="body">
+    <p>Voltage, circuits and conductor section matter most, followed by tower height, route, the ratio of suspension to strain towers, wind and ice loads, and required reliability. Indemnities have in some cases approached the cost of the line itself.</p>
+    <figure class="fig"><h4>Investment estimator, Equations 1.6 to 1.9</h4>
+      <div class="grid2">
+        <label class="f">Rated voltage (kV)<select id="kU"><option>110</option><option>220</option><option selected>380</option><option>500</option><option>750</option></select></label>
+        <label class="f">Subconductors per phase<select id="kN"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>6</option></select></label>
+        <label class="f">Aluminium per subconductor (mm²)<input type="number" id="kA" value="240" min="50" max="1000" step="10"></label>
+      </div>
+      <div class="scroll"><div id="kChart" style="min-width:500px"></div></div><div class="out" id="kOut"></div>
+      <figcaption>Rough estimate, Central Europe, about 2002 prices, indemnities excluded. The book says "total" cross section; this tool uses subconductors × area per phase, which is my reading because it lands inside Table 1.6. For example 4 × 240 mm² at 380 kV gives about 755 kEUR/km.</figcaption></figure>
+    <figure class="fig"><div class="row"><span class="small muted">Table 1.6, show:</span><span class="row" id="t16b"></span></div><div class="scroll"><div id="t16" style="min-width:420px"></div></div><figcaption>Table 1.6 (p. 17). 110 to 380 kV are double circuit, 500 and 750 kV single circuit, all self-supporting towers.</figcaption></figure>
+    <figure class="fig"><div class="row"><span class="small muted">Table 1.7, voltage:</span><span class="row" id="t17b"></span></div><div class="scroll"><div id="t17" style="min-width:380px"></div></div><figcaption>Share of investment by component (p. 17). Engineering is a single value. Foundations shrink in share as voltage rises, and circuits grow.</figcaption></figure>
+  </div></details>
+
+  <details class="sec" open id="s1-11"><summary><span class="num">1.11</span><span class="t">Licences and permits</span><span class="pg">p. 17–18</span></summary><div class="body">
+    <p>Almost every country requires an environmental impact study. Managing the permit process well is vital, and that means involving people early.</p>
+    <div class="grid2">
+      <div class="note small"><h4>What the process covers</h4><ul><li>Project justification</li><li>EMF effects</li><li>Visual impact</li><li>Interests of communities</li><li>Effects on land use and property value</li></ul></div>
+      <div class="note small"><h4>Practice</h4><ul><li>Inform landowners early, including compensation and route criteria</li><li>Explain access roads for construction and maintenance</li><li>Use qualitative visual assessment with the public</li><li>Present designs with photomontages</li><li>Avoid sensitive areas; keep access roads on natural contours</li></ul></div>
+    </div>
+  </div></details>
+
+  <details class="sec" open id="s1-12"><summary><span class="num">1.12</span><span class="t">Underground versus overhead</span><span class="pg">p. 18–21</span></summary><div class="body">
+    <p>Cables suit places where lines are not approved or not feasible: urban areas, airport approaches, substation exits, water crossings. Submarine cable may be the only option between systems separated by sea.</p>
+    <figure class="fig"><div class="scroll"><div id="t18" style="min-width:420px"></div></div><figcaption>Table 1.8 (p. 20), logarithmic scale. Means from a Cigré survey. The bracket gives the spread of the ratio across projects. Losses narrow the gap somewhat, as cables have larger cross sections.</figcaption></figure>
+    <figure class="fig"><h4>Overhead or cable cost, from the survey means</h4>
+      <div class="grid2"><label class="f">Voltage range<select id="cR"><option value="0">110 to 219 kV</option><option value="1">220 to 362 kV</option><option value="2" selected>363 to 764 kV</option></select></label><label class="f">Power (MVA)<input type="number" id="cP" value="1800" min="10"></label><label class="f">Route length (km)<input type="number" id="cL" value="10" min="1"></label></div>
+      <div class="out" id="cOut"></div><figcaption>Survey means only, about 2002. The real ratio is project specific.</figcaption></figure>
+    <div class="scroll"><table>
+      <tr><th>Issue</th><th>Overhead line</th><th>Underground cable</th></tr>
+      <tr><td>Long-term overload</td><td>Tolerated within emergency temperature</td><td>Ages faster, may be damaged</td></tr>
+      <tr><td>Repair time</td><td>Short, so (n−1) holds well</td><td>Much longer; (n−1) may not hold</td></tr>
+      <tr><td>Uprating</td><td>Reconductoring</td><td>Rating virtually fixed; re-excavate or improve cooling</td></tr>
+      <tr><td>Fault level</td><td>Base case</td><td>Rises after replacement, as cable impedance is lower</td></tr>
+      <tr><td>Main public issue</td><td>Visual impact, land use</td><td>Magnetic field, terminations, compensation equipment</td></tr>
+    </table></div>
+    <p class="small">To reduce the impact of cable faults: a spare phase cable, a double circuit cable, or the (n−2) criterion, all at added cost. The book expects new cable technology to lower the ratio, but not close the gap at the highest voltages.</p>
+  </div></details>
+
+  <details class="sec" open id="s1-13"><summary><span class="num">1.13</span><span class="t">Results of overall planning</span><span class="pg">p. 21</span></summary><div class="body">
+    <p>Planning ends with a defined line. Use this as your checklist. Ticks are remembered in this browser.</p>
+    <div class="grid2"><div class="checks" id="res1"></div><div class="checks" id="res2"></div></div>
+    <p class="small">These results feed detailed survey and design: tower locations and types, foundations, and the bill of quantities, covered in <b>Chapter 15</b>. Earlier: voltage, corona and clearances continue in Chapter 2; conductors in Chapter 7; supports in Chapter 12.</p>
+  </div></details>
+
+  <div class="flag" id="disc">
+    <h4>Where the book disagrees with itself</h4>
+    <ul class="small">
+      <li><b>1965 Canadian line:</b> the text says 725 kV (p. 5), the Foreword says 750 kV, and Figure 1.1 plots about 735 kV. This guide follows the p. 5 text.</li>
+      <li><b>Table 1.6, 750 kV investment:</b> printed as "350 to 4500" kEUR/km (p. 17). This looks like a misprint, possibly for 450, but the book does not confirm it. The chart plots the printed figures.</li>
+      <li><b>Magnetic field, Table 1.5:</b> the table gives 10 against 50 µT/kA (p. 15), yet the text says a reduction of "approximately 20 %" (p. 16). Check the source paper before quoting either.</li>
+    </ul>
+    <p class="small">Standards cited (EN 60071, IEC 60038, IEC 60071-1) and all prices date from around 2002. Check current editions before using them in real work. Calculators here are for learning only, not for design. The book uses decimal commas; this guide uses points.</p>
+  </div>

@@ -1,0 +1,60 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>Earth wires shield conductors from lightning, return earth fault current, reduce interference and spare the substation earthing mat. In normal service they carry almost nothing, so their size is set by short circuits: heating so fast that no heat escapes. The rating follows from an adiabatic formula and a temperature limit. Many utilities now use larger conductors near substations and steel further out. With optical fibres, the earth wire also became a telecommunications link: OPGW.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">Short-circuit levels keep rising, and a wire sized for today may sag or weaken tomorrow. Selection needs to look at least ten years ahead, and sag must be coordinated with the conductors below.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>List the functions of an earth wire</li>
+      <li>Calculate permissible short-circuit current</li>
+      <li>Find final temperature after a fault</li>
+      <li>Choose an equivalent fault duration with reclosing</li>
+      <li>Set earth wire sag against conductor sag</li>
+      <li>Compare OPGW, ADSS and attached cables</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s8-1"><summary><span class="num">8.1</span><span class="t">Types of earth wires</span><span class="pg">p. 243</span></summary><div class="body">
+  <div class="fig"><h4>What an earth wire does</h4><div id="fnStep"></div></div>
+  <p>Older lines used steel or low-aluminium ACSR. Higher fault levels moved many utilities, especially in Europe, to larger ACSR or other conductive cables. A common compromise is high conductivity for the first 5 to 10 km from a substation, then steel.</p>
+</div></details>
+
+<details class="sec" open id="s8-2"><summary><span class="num">8.2</span><span class="t">Electric and thermal design</span><span class="pg">p. 243–250</span></summary><div class="body">
+  <p>A fault is too short for cooling, so heating is adiabatic. Integrating heat in against heat stored gives the permissible thermally equivalent current I<sub>th</sub>:</p>
+  <div class="eq">I<sub>th</sub> = √[ (γ·c)/(ρ·α) · ln{(1+α(T₂−20))/(1+α(T₁−20))} · A₁·A₂/t<sub>K</sub> ] &nbsp; (8.6)</div>
+  <div class="scroll"><table style="min-width:440px"><tr><th>Assumption</th><th>Conduction</th><th>Heat storage</th></tr><tr><td>A</td><td>Aluminium only</td><td>Aluminium only</td></tr><tr><td>B</td><td>Aluminium and steel</td><td>Aluminium and steel</td></tr><tr><td>C</td><td>Aluminium only</td><td>Aluminium and steel</td></tr></table></div>
+  <div class="fig"><h4>Permissible short-circuit current</h4><div id="scCalc"></div><figcaption>Eq. 8.6, assumption B, with data from Table 8.2 and α = 0.0045 steel, 0.0036 A20SA, 0.00403 ACSR. The current falls with √t. Initial current I"<sub>k</sub> = I<sub>th</sub>/√(m + n), and the DC term m is small enough to ignore in most cases.</figcaption></div>
+  <div class="fig"><h4>Final temperature after a fault</h4><div id="ftCalc"></div><figcaption>Eq. 8.5, 0.5 s, initial temperature 40 °C unless changed, as in Figures 8.1 and 8.3.</figcaption></div>
+  <div class="fig"><h4>Temperature limits</h4><div id="limBars"></div><figcaption>Steel: EN 60865-1 200 °C; some utilities accept 300 °C, the recommended ceiling. ACSR: 160 °C in EN 60865-1, 200 °C in EN 50341-3-4. OPGW makers quote 180 to 220 °C. Zinc starts to melt above 420 °C.</figcaption></div>
+  <div class="fig"><h4>Fault clearing and reclosing</h4><div id="recStep"></div><figcaption>The gaps are too short for cooling, so use an equivalent duration: 0.5 to 1.0 s up to 300 kV, 0.2 to 0.6 s above.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s8-3"><summary><span class="num">8.3</span><span class="t">Mechanical design</span><span class="pg">p. 250–251</span></summary><div class="body">
+  <p>Overheating can elongate, weaken or break a wire, and permanent stretch reduces separation from phases.</p>
+  <div class="fig"><h4>Sag rise of steel wire, 400 m span</h4><div id="sagBars"></div><figcaption>Figures 8.5 and 8.6. 200 °C recovers after cooling. 400 °C is accepted only in exceptional cases, such as old lines.</figcaption></div>
+  <p>Earth wire sag is usually set to <b>90 to 95 % of conductor sag</b> at the mean yearly temperature (10 °C in Europe), never exceeding the conductor sag, so that midspan separation is at least that at the tower.</p>
+</div></details>
+
+<details class="sec" open id="s8-4"><summary><span class="num">8.4</span><span class="t">Steps for selecting an earth wire</span><span class="pg">p. 251</span></summary><div class="body"><div class="checks" id="stepChk"></div></div></details>
+
+<details class="sec" open id="s8-5"><summary><span class="num">8.5</span><span class="t">Earth wires with optical fibres</span><span class="pg">p. 252–255</span></summary><div class="body">
+  <p>Optical fibres are immune to electromagnetic interference. Lines connect population centres, so spare fibres can serve other companies too.</p>
+  <div class="fig"><h4>Three kinds of aerial cable</h4><div id="optStep"></div></div>
+  <div class="fig"><h4>OPGW capacity, Table 8.3</h4><div id="opCalc"></div><figcaption>Manufacturers state short-circuit capacity as I²·t. Fibres sit in gel inside stainless steel tubes, which are not counted mechanically. Replacing one strand is tolerable. Replacing more needs checking.</figcaption></div>
+  <p class="small">OPGW meets the same EDS and ice requirements as conventional conductors, and most need vibration protection. Attenuation is checked at 1550 nm. Fittings must not deform the tube.</p>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Table 8.1 against Eq. 8.6, p. 246 and 248.</b> For 264-AL1/34-ST1A at 1 s, assumption A matches at 23.4 kA. With the printed data, B and C come to about 27.6 and 27.0 kA, not 25.2 and 25.4. Table 8.2 itself lists 27.9 kA, which supports the formula. The stated 25 kA looks low.</li>
+    <li><b>Table 8.2, 264/34 row, p. 248.</b> Other rows follow √t, but 51.2, 34.3 and 27.9 kA do not. At 0.5 s the formula gives about 39 kA.</li>
+    <li><b>Figure 8.2 caption, p. 248.</b> Lists 65- and 70-ST1A; the figure and text use 66- and 93-ST1A.</li>
+    <li><b>Range limit.</b> Up to 300 kV as Range I here, as in Chapter 4, against 245 kV in Chapter 2.</li>
+  </ul>
+</div>

@@ -1,0 +1,76 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>A hanging conductor follows a catenary, which a parabola matches closely up to about 500 m. Tension falls when it warms and rises under ice, and the state change equation links any two conditions. Sections of several spans behave like one ruling span. Each design condition then gives a sag, and the worst sag is compared with the clearance to ground, roads or other lines. Computers do this exactly today, and knowing the hand method tells you what the program should say.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">Sag decides tower height and clearance safety. Tension decides tower and foundation loads. A 1 m error in a crossing is a safety issue, and the book's own example shows simple methods can miss this by that much.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Calculate sag by catenary and parabola</li>
+      <li>Handle spans with supports at different heights</li>
+      <li>Solve the state change equation</li>
+      <li>Find the ruling span of a section</li>
+      <li>Include concentrated loads and tension sets</li>
+      <li>Check clearances to ground, roads and lines</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s14-1"><summary><span class="num">14.1</span><span class="t">Basis</span><span class="pg">p. 540</span></summary><div class="body">
+  <p>Between supports, the conductor has constant properties. Bending stiffness is low, so tension acts alone, and the ends are pivots with no moment. Sag f is the vertical distance from the conductor to the chord between attachment points.</p>
+</div></details>
+
+<details class="sec" open id="s14-2"><summary><span class="num">14.2</span><span class="t">The catenary</span><span class="pg">p. 540–544</span></summary><div class="body">
+  <p>Horizontal force H is constant along the span. With c = H/(m·g), the curve is y = c·cosh(x/c). Tension at any point is S = H·cosh(x/c), highest at the supports. Mean tension is H·L/a.</p>
+  <div class="fig"><h4>Catenary or parabola</h4><div id="catCalc"></div><figcaption>Equations 14.17, 14.25 and 14.33. Defaults are the book's 304-AL1/49-ST1A: 800 m gives 69.92 m by catenary, 69.23 m by parabola. Use the catenary where the difference exceeds 0.10 m, roughly over 500 m in this case.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s14-3"><summary><span class="num">14.3</span><span class="t">The parabola</span><span class="pg">p. 544–546</span></summary><div class="body">
+  <p>Neglecting slope spreads weight along the span instead of the curve: f<sub>max</sub> = m·g·a²/(8H), and at any point f = 4·f<sub>max</sub>·(ξ/a)·(1 − ξ/a). Sag at a given ξ does not depend on the height difference. Length L = a·[1 + (8/3)(f/a)²].</p>
+  <div class="fig"><h4>How little extra length makes sag</h4><div id="lenCalc"></div><figcaption>Rearranging Eq. 14.31: about 0.04 % extra length gives sag of 1.3 % of span. This is why a small temperature rise changes sag noticeably.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s14-4"><summary><span class="num">14.4</span><span class="t">Supports at different heights</span><span class="pg">p. 546</span></summary><div class="body">
+  <div class="fig"><h4>Inclined span</h4><div id="incCalc"></div><figcaption>Complementary span a<sub>e</sub> = a + 2H·h/(m·g·a), Eq. 14.35, is the level span with the same vertex. If the vertex falls outside the span, the lower support pulls upward: an uplift case for load case G in Chapter 12. Tension at a support is H + m·g × height over the vertex.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s14-5"><summary><span class="num">14.5</span><span class="t">State change equation</span><span class="pg">p. 546–549</span></summary><div class="body">
+  <p>Length change between two states comes from elastic stretch and thermal expansion. For a section with several spans, use the equivalent or ruling span, a<sub>id</sub> = √(Σa³/Σa). It assumes equal tension in all spans, which is better than treating each span as fixed.</p>
+  <div class="eq">H₂²·[H₂ − H₁ + EA(a·w₁)²/(24H₁²) + EA·ε·(T₂ − T₁)] = EA(a·w₂)²/24 &nbsp; (14.40)</div>
+  <div class="fig"><h4>State change solver</h4><div id="scCalc"></div><figcaption>Solves Eq. 14.44 by Newton's method. Defaults are the book's section of six spans, 304-AL1/49-ST1A at 50 N/mm², 10 °C, sag at 60 °C in the 500 m span: 15 575 N and 24.39 m. Treating that span alone gives 16 265 N and 23.35 m, 1.04 m too little.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s14-6"><summary><span class="num">14.6</span><span class="t">Concentrated loads</span><span class="pg">p. 549–551</span></summary><div class="body">
+  <p>Sag equals the bending moment of an equivalent simple beam over H. Markers or spacers count as point loads. For a load at midspan, the shear integral is G²a/4 + G·w·a²/4 + w²a³/12.</p>
+  <div class="fig"><h4>Marker at midspan</h4><div id="clCalc"></div><figcaption>Equation 14.49 with Eq. 14.46. Defaults: 264-AL1/34-ST1A, 400 m, 50 N/mm², G = 2000 N. Book: tension rises 69 % to 25 152 N, sag only 20 % to 15.74 m.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s14-7"><summary><span class="num">14.7</span><span class="t">Short spans with tension sets</span><span class="pg">p. 551–553</span></summary><div class="body">
+  <p>In short spans, heavy tension sets cannot be ignored. Rigid sets (one long rod) use Eq. 14.53 and 14.54. Flexible sets (cap-and-pin or several rods) act as a heavy length of conductor: Eq. 14.55 and 14.56. Tension results are almost equal, and flexible sets show about 0.1 m more sag.</p>
+  <div class="fig"><h4>Flexible set</h4><div id="flxCalc"></div><figcaption>Eq. 14.55 and 14.56. Defaults: 565-AL1/72-ST1A, 50 m span, 5 m sets, 150 kg, 10 N/mm² at 10 °C, sag at 40 °C: book 6005 N and 1.74 m.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s14-8"><summary><span class="num">14.8</span><span class="t">Forces in a tensioning section</span><span class="pg">p. 553–563</span></summary><div class="body">
+  <p>Suspension sets swing along the line, so a change in one span shifts all others. Ice in one span pulls the sets towards it: tension rises less than with fixed points, but sag rises more. Each set settles where tension difference balances its vertical load. Programs solve this system for all spans.</p>
+  <p><b>Inverted V sets</b> cut this swing. With a 60° opening, a 110 kV example gained 2.42 m clearance under local ice, but tension difference rose from 1.3 to 4.0 kN. The strings must resist compression, and vibration protection is needed.</p>
+  <div class="fig"><h4>Local ice quick estimate</h4><div id="iceCalc"></div><figcaption>Eq. 14.80 and 14.81: f = f₍₋₅,ice₎·K₁·K₂·K₃·K₄, K₁ = √(2/(1 + (w/w<sub>ice</sub>)²)). Valid for ice under 10 N/m and spans to 600 m for ACSR. Default gives the book's 12.33 m.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s14-9"><summary><span class="num">14.9</span><span class="t">Clearances to ground and objects</span><span class="pg">p. 563–570</span></summary><div class="body">
+  <p>Check maximum temperature, ice, and local ice. Sag in a real span scales from the ruling span: f<sub>i</sub> = (a<sub>i</sub>/a<sub>id</sub>)²·f<sub>id</sub> (14.82). Clearance is chord height minus sag minus ground.</p>
+  <div class="fig"><h4>Clearance in a span</h4><div id="grCalc"></div><figcaption>Equations 14.82, 14.26 and 14.83. Defaults: book's 110 kV span 2, 425 m, ruling span 340.32 m, 12.55 m at 80 °C. Result 6.43 m against 6.0 m needed at ξ = 255 m. Move ξ to the road at 211 m with ground 263 m, for 10.2 m.</figcaption></div>
+  <div class="fig"><h4>Hand against program</h4><div id="cmpBars"></div><figcaption>Tables 14.4, 14.6, 14.7. Close for temperature, but up to 1.88 m off for local ice and 0.82 m for wind crossing, where hand results can be on the unsafe side. The book recommends exact programs for crossings.</figcaption></div>
+  <p class="small"><b>Crossing a line:</b> check maximum temperature of the upper line with 40 °C on the lower; local ice on the upper with none on the lower; wind with 40 % pressure difference, moving the crossing point in plan. Required: Dpp, here 1.15 m.</p>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Local ice load, p. 565.</b> The text prints (5 + 0.1·2.24)/2 = 2.62 N/m. With d = 22.4 mm it is 3.62 N/m, as the program output in Table 14.5 shows.</li>
+    <li><b>Weight typo, p. 551.</b> "0,998·8,81" should be 9.81, since the 15.74 m result needs it.</li>
+    <li><b>Table reference, p. 563.</b> Clearances are cited to Table 2.23; the values are in Table 2.24.</li>
+  </ul>
+</div>

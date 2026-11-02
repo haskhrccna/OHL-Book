@@ -1,0 +1,122 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>A finished line is checked, tested and handed over, then earns its keep for decades. Monitoring squeezes more from it: real-time ratings, lightning location, ice and galloping alerts. Asset management turns decisions into numbers, comparing the planned cost and risk of each option by net present value. Maintenance rests on inspection, from a patrol to full-scale testing. Failures are investigated without prejudging the cause. Availability is measured in hours, and old lines can be refurbished, upgraded or uprated instead of replaced.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">Lines are hard to build and last 50 years or more. In the book's example, spending 26 000 EUR on two targeted measures cuts annual cost and risk from 294 898 to 136 582 EUR. A 1 000 000 EUR second line does worse.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Run a final inspection</li>
+      <li>Measure conductor resistance by phase pairs</li>
+      <li>Explain real-time rating and galloping alerts</li>
+      <li>Calculate risk and net present value</li>
+      <li>Choose an inspection method for a defect</li>
+      <li>Investigate a failure</li>
+      <li>Work out energy availability</li>
+      <li>Separate refurbishing, upgrading and uprating</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s17-1"><summary><span class="num">17.1.1–5</span><span class="t">Commissioning and acceptance</span><span class="pg">p. 677–682</span></summary><div class="body">
+  <p>Supervision runs in three stages: approval, design and manufacturing; construction; and final inspection. Each ends in acceptance. The owner is liable for breaches of approval conditions even if a contractor caused them, so scheduled checks are essential. Independent consultants can do this where staff cannot.</p>
+  <div class="fig"><h4>What to watch during construction</h4><div id="supStep"></div><figcaption>From clause 17.1.3.</figcaption></div>
+  <div class="fig"><h4>Final inspection checklist</h4><div id="finalChk"></div><figcaption>Clause 17.1.4, condensed. Your ticks stay in this browser. Each open item goes in the signed acceptance record with a completion date.</figcaption></div>
+  <p>Quality assurance follows EN 50341-1. The plan sets activities in sequence, with staff duties, hold and notification points, and inspections on receipt, during work and at the end.</p>
+</div></details>
+
+<details class="sec" open id="s17-1-6"><summary><span class="num">17.1.6–7</span><span class="t">Performance tests</span><span class="pg">p. 682–686</span></summary><div class="body">
+  <p>Power losses cannot be measured usefully, because they are of the same order as instrument accuracy. So conductor resistance is measured instead, with DC, phases short-circuited at one end, in pairs.</p>
+  <div class="fig"><h4>Resistance from phase pairs</h4><div id="resCalc"></div><figcaption>Equations 17.1 to 17.8, using the book's 73.2 km 220 kV line at 32.9 °C. Conductor length is 2 % longer than the line. Results: 0.0548, 0.0529, 0.0539 Ω/km against 0.0545 nominal, tolerance 5 %.</figcaption></div>
+  <div class="fig"><h4>Other tests</h4><div id="testStep"></div><figcaption>Clauses 17.1.6.1 and 17.1.6.3 to 17.1.6.5.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s17-2"><summary><span class="num">17.2</span><span class="t">Operation and monitoring</span><span class="pg">p. 686–693</span></summary><div class="body">
+  <p>Thermal rating is the current that keeps the conductor at its design temperature, where legal clearance is just met. Fixed ratings use cautious weather assumptions. Real-time monitoring shows the true margin, without running hotter than designed. Losses rise near the limit, so it is not for continuous use.</p>
+  <div class="fig"><h4>What real-time ratings gained</h4><div id="rtBars"></div><figcaption>Reported gains, p. 687 and 689. Ampacity in many places is higher by day, because wind is stronger.</figcaption></div>
+  <div class="scroll"><table style="min-width:560px"><tr><th>Method</th><th>Measures</th><th>Good</th><th>Weak</th></tr><tr><td>Direct, clamp-on sensor</td><td>Conductor surface temperature</td><td>Simple</td><td>One spot, surface not average, only that line</td></tr><tr><td>Direct, tension load cell</td><td>Force at a strain tower</td><td>Averages the whole section, closest to sag</td><td>Only that line</td></tr><tr><td>Indirect, weather</td><td>Wind, sun, air, current</td><td>Covers several lines, forecasts 24 h</td><td>Sheltering, wind differs at the line</td></tr></table></div>
+  <p>Combining weather and tension gets the benefit of both. Knowing true ampacity may delay dispatch changes after a disturbance, and may postpone upgrades.</p>
+  <p><b>Lightning location</b> times the wave at many sensors, synchronised by GPS. It warns crews, speeds fault finding and helps future design. Lightning makes up to 30 % of faults in Germany and 60 % in Brazil.</p>
+  <p><b>Ice monitoring</b> triggers countermeasures. Hydro-Québec's system uses 20 sites, and load cells can show ice as well.</p>
+  <div class="fig"><h4>Galloping readiness</h4><div id="grcCalc"></div><figcaption>Eq. 17.9. A threshold of 40 caught 85 % of 66 cases, and the warning stays on for 10 hours. The peak is near 0 °C with air close to dew point. Inputs are illustrative.</figcaption></div>
+  <p><b>Insulators.</b> Cap-and-pin strings are checked by voltage across each unit, never in wet weather. A spark-gap tester gives no sound from a dead disc. Long rods are puncture-proof and need no test. Composite units have a critical defect length of 35 to 40 % of design length, so they need periodic diagnosis.</p>
+</div></details>
+
+<details class="sec" open id="s17-3"><summary><span class="num">17.3.1–10</span><span class="t">Asset management</span><span class="pg">p. 693–699</span></summary><div class="body">
+  <p>Risk is chance times consequence, in money. The goal is to minimise the net present value of planned expenditure plus risk over a chosen period.</p>
+  <div class="fig"><h4>Survival over time</h4><div id="probCalc"></div><figcaption>Equations 17.13 to 17.15, assuming a constant annual probability. Default is the book's 50-year storm over 5 years: 9.6 %.</figcaption></div>
+  <div class="fig"><h4>Three kinds of terms</h4><div id="defStep"></div><figcaption>The book's definitions, clause 17.3.1. These are easily confused.</figcaption></div>
+  <div class="scroll"><table style="min-width:520px"><tr><th></th><th>Predictable event</th><th>Unpredictable event</th></tr><tr><td>Probability</td><td>Relatively high</td><td>Relatively low</td></tr><tr><td>Economic way to avoid failure</td><td>Exists</td><td>Does not exist</td></tr><tr><td>Properly designed line</td><td>Survives</td><td>Does not survive</td></tr><tr><td>Best response</td><td>Proactive</td><td>Reactive</td></tr></table></div>
+  <div class="fig"><h4>The management loop</h4><div id="loopStep"></div><figcaption>Figure 17.3. There is no fixed start.</figcaption></div>
+  <div class="scroll"><table style="min-width:580px"><tr><th>Decision</th><th>Cost</th><th>Failure probability</th><th>Consequences</th></tr><tr><td>Maintenance</td><td>Annual up</td><td>Down</td><td>Same</td></tr><tr><td>Refurbish, extend, upgrade</td><td>Investment up</td><td>Down</td><td>Same</td></tr><tr><td>Decommission</td><td>Annual down</td><td>Zero</td><td>Local</td></tr><tr><td>Fast restoration</td><td>Investment up</td><td>Same</td><td>Down, mainly system</td></tr><tr><td>Insurance</td><td>Annual up</td><td>Same</td><td>Down</td></tr><tr><td>New lines</td><td>Investment up</td><td>Same</td><td>Down</td></tr><tr><td>Do nothing</td><td>Same</td><td>Same</td><td>Same</td></tr><tr><td>Reduce maintenance</td><td>Annual down</td><td>Up</td><td>Same</td></tr><tr><td>Uprate without upgrading</td><td>Investment up</td><td>Up</td><td>Up</td></tr></table></div>
+  <p class="small">Table 17.2. All three families, reduction, acceptance and increase, can be right. If risk is lower than needed, spending less is a valid choice.</p>
+  <p>A data base holds as-built state, changes, service experience and condition. Keep raw data, since which element is critical may not be known for years.</p>
+</div></details>
+
+<details class="sec" open id="s17-3-11"><summary><span class="num">17.3.11</span><span class="t">Worked example: a 110 kV line</span><span class="pg">p. 700–703</span></summary><div class="body">
+  <p>10 km, 100 MW, 50 towers, 168 long rods, one railway crossing. If it fails, 40 MW is lost at a penalty of 1000 EUR/MWh.</p>
+  <div class="fig"><h4>How many failures in a year</h4><div id="binCalc"></div><figcaption>Eq. 17.16, the binomial probability. Failures are independent. Defaults give the book's 0.00497556 for one tower of 50.</figcaption></div>
+  <div class="fig"><h4>Where the annual cost sits</h4><div id="riskBars"></div><figcaption>Table 17.4. Total 294 898 EUR per year. The one crossing dominates, and its insulators most of all.</figcaption></div>
+  <div class="fig"><h4>Compare the options</h4><div id="npvCalc"></div><figcaption>Table 17.5. Each line is investment plus discounted annual cost and risk. This matches the book to within a few EUR, except option 5, which is about 1700 EUR off. A second line only beats "do nothing" after about 17 years at 5 %.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s17-4-2"><summary><span class="num">17.4.1–2</span><span class="t">Inspection</span><span class="pg">p. 703–714</span></summary><div class="body">
+  <p>Maintenance is inspection, servicing and repair, although lines need no servicing. Inspection may be preventive, the most important, or corrective after an event.</p>
+  <div class="scroll"><table style="min-width:540px"><tr><th>Type</th><th>Content</th><th>Interval (South American example)</th></tr><tr><td>Routine (RI)</td><td>Visual, binoculars or helicopter</td><td>Annual for wood, three-yearly for metal and concrete</td></tr><tr><td>Preventive (PI)</td><td>Climbing every structure</td><td>Two or four years for wood, four for metal and concrete</td></tr><tr><td>Tower leg (LI)</td><td>Excavate wood poles, treat</td><td>8 to 10 years</td></tr><tr><td>Corrosion (CI)</td><td>Samples of grillages and legs</td><td>After 10 years, about 10 % a year</td></tr><tr><td>Special (SI)</td><td>Acceptance, conductors, earthing, electronic, infra-red</td><td>As needed</td></tr></table></div>
+  <p>Central Europe flies about once a year at about 20 km/h, patrols once a year, and inspects in depth about every ten years. Helicopters cover up to 300 km a day and look down on the line, but cannot fly over dense urban areas.</p>
+  <div class="fig"><h4>Which tool finds what</h4><div id="toolCalc"></div><figcaption>Summary of clauses 17.4.2.3 to 17.4.2.7.</figcaption></div>
+  <div class="fig"><h4>Foundation inspection levels</h4><div id="fndStep"></div><figcaption>Reference 17.46 via p. 707.</figcaption></div>
+  <p>Internal conductor corrosion cannot be seen until late. It shows as bulging, because corrosion products take up several times the volume of aluminium. A joint is critical when its resistance reaches two or three times that of an equal conductor length. Normally a sound joint runs cooler than the conductor.</p>
+  <p>Glass may fail early then settles. Porcelain has few early faults but ages at a growing rate, mainly by pin corrosion. Long rods need only visual checks. Use two or more methods on composites.</p>
+</div></details>
+
+<details class="sec" open id="s17-4-3"><summary><span class="num">17.4.3</span><span class="t">Corrective maintenance</span><span class="pg">p. 714–719</span></summary><div class="body">
+  <p>Safety defects are repaired at once. Other repairs depend on the owner's plans: a line with few years left may not need new fittings or paint.</p>
+  <div class="scroll"><table style="min-width:520px"><tr><th>Damage</th><th>Up to 10 % loss</th><th>Above 10 %</th></tr><tr><td>Grillage, foundation steel</td><td>Electric weld, coat, perhaps cathodic protection</td><td>Replace</td></tr><tr><td>Tower members</td><td>Weld, or bolt on plates or angles</td><td>Replace</td></tr><tr><td>Conductor</td><td>Broken strands: armour patch rods</td><td>Corroded core: replace all</td></tr></table></div>
+  <p>Priority: U urgent, A immediate, B within one year, C later. De-energised work is preferred. Live working is for when switching off is not possible or would be expensive.</p>
+  <div class="fig"><h4>Minimum sound insulators for live work</h4><div id="insCalc"></div><figcaption>Table 17.7, South American practice, cap-and-pin U70BL to U120B.</figcaption></div>
+  <div class="fig"><h4>Live-line clearance</h4><div id="lvChart"></div><figcaption>Table 17.8, minimum clearance to linemen against system voltage.</figcaption></div>
+  <div class="fig"><h4>Ways of working</h4><div id="liveStep"></div><figcaption>Reference 17.57 via p. 716. Dead-line work counts as live working too.</figcaption></div>
+  <p>Coating is renewed every 10 to 20 years. Right-of-way cycles run three years in the tropics and five to ten in moderate climates. RWE breaks up clear-cutting with a stepped forest edge, slow-growing species, chess board, fishbone or island plots, and no herbicides.</p>
+</div></details>
+
+<details class="sec" open id="s17-4-4"><summary><span class="num">17.4.4</span><span class="t">Investigating failures</span><span class="pg">p. 719–723</span></summary><div class="body">
+  <p>Do not judge early. First rule out what cannot have happened, then test several scenarios against the data, as a team. Reach the site before repair erases evidence. Rust on a break shows an older crack, burn marks show a discharge, and loose bolts may mean sabotage.</p>
+  <div class="fig"><h4>Failures by cause</h4><div id="failBars"></div><figcaption>Table 17.9, Cigré survey 1991 to 1996, towers failed. About 50 000 km of line over an average of 15 years, 299 events, 1731 towers as printed. Note the small number of events behind the ice figure on EHV lines.</figcaption></div>
+  <p>Most failures had causes that can be treated statistically, and most lines were designed deterministically. Few were foundation failures. Observed order of failure: suspension towers first, then hardware, then foundations. In the conductor system: insulators, hardware, conductors.</p>
+</div></details>
+
+<details class="sec" open id="s17-5"><summary><span class="num">17.5</span><span class="t">Reliability and availability</span><span class="pg">p. 723–727</span></summary><div class="body">
+  <p>Availability is the time a line can do its job, 100 % less forced (FEU) and scheduled (SEU) unavailability.</p>
+  <div class="fig"><h4>Energy availability</h4><div id="availCalc"></div><figcaption>Clause 17.5.2.2, defaults from the book's 350 km 500 kV line. Above 100 km, the return period is scaled down by 100/length. The book gets FEU 0.084 %, SEU 0.27 % and EA 99.65 %. This tool shows 99.64 % because the book rounds intermediate values. Most lost time is scheduled.</figcaption></div>
+  <div class="scroll"><table style="min-width:520px"><tr><th>Term</th><th>Meaning</th></tr><tr><td>Sustained or transient outage</td><td>One minute or more, or less than one minute</td></tr><tr><td>Tower failure rate P<sub>f</sub></td><td>1/(2T<sub>R</sub>)</td></tr><tr><td>Other mechanical parts</td><td>About 30 % of tower risk</td></tr><tr><td>Lightning, unsuccessful reclosing</td><td>About 35 % of outages, 2 to 4 h repair</td></tr><tr><td>Power-frequency flashover</td><td>About 0.3 events a year, 8 h repair</td></tr><tr><td>Safety and security</td><td>No harm to people, and no cascade after one failure</td></tr></table></div>
+  <p>Cut scheduled time with routine maintenance, spare stores, live-line work and crews within a few hours' reach.</p>
+</div></details>
+
+<details class="sec" open id="s17-6"><summary><span class="num">17.6</span><span class="t">Refurbishment, upgrading, uprating</span><span class="pg">p. 727–731</span></summary><div class="body">
+  <div class="fig"><h4>Three routes</h4><div id="upStep"></div><figcaption>Clause 17.6.1. New rights-of-way are not required in any of them.</figcaption></div>
+  <p>Raising design temperature from 50 to 80 °C gives about 30 % more power, but needs a full redesign for clearances: new survey, higher towers, midspan towers or restringing. Laser scanning helps. Voltage or conductor changes bring new loads, so check the structure.</p>
+  <div class="fig"><h4>Ruhr conversion</h4><div id="capBars"></div><figcaption>Figure 17.8. Four 220 kV circuits became two 380 kV and two 110 kV on the same 35 sites, with new tower tops and reinforced bodies and foundations. The parallel 110 kV line was removed.</figcaption></div>
+  <div class="fig"><h4>Aim of upgrading</h4><div id="rpBars"></div><figcaption>Return periods from the two German cases, p. 729–731. The aim is about one order of magnitude lower risk.</figcaption></div>
+  <p>Weser crossing: leg load rose from 2350 to 2965 kN. Two high-tensile angles were added to the two existing ones, joined with batten plates at 700 mm. Open angle-section towers can be reinforced at acceptable cost, unlike other supports. Ice upgrade: block foundations of five tension towers took 320 kN more, by adding a slab between the two uplift-loaded blocks.</p>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Table 17.9, p. 722.</b> The EHV column adds up to 82 events and 746 towers, not the printed 84 and 749. The HV column adds up correctly.</li>
+    <li><b>Figure 17.8, p. 728.</b> 3030 + 400 = 3430 MVA, but it prints 3700 MVA. With the 3300 MW target in the text, 3030 may be a misprint. The figure also says ACSR 340/30, the text 382-AL1/49.</li>
+    <li><b>Availability, p. 726.</b> 8760/3.8 − 5 = 2300 h, printed 2303. MTTR of 5.6 h does not follow from the figures: all forced time adds up to about 7.45 h, which would give a FOR of 0.085 % like FEU, not 0.068 %.</li>
+    <li><b>Table 17.5, p. 702.</b> −5367 should be −5376 (0.8 × 6720), which is what the sum −101 368 needs. Option 5's 20-year NPV of 3 556 566 is about 1700 EUR below investment plus 205 284 per year.</li>
+    <li><b>Eq. 17.10, p. 695.</b> The sum starts at i = 0, but the book's NPVs only match with annual costs from year 1 to n, with investment at year 0. This site uses that.</li>
+    <li><b>Resistance example, p. 684.</b> R<sub>B</sub> prints 0.0566 in the correction, where 0.0556 is meant. The result 0.0528 follows from 0.0556, though it rounds to 0.0529.</li>
+    <li><b>Earth test, p. 682.</b> Calls the Wenner method three-point, while Chapter 5 calls it four-point.</li>
+    <li><b>Thermal test load.</b> At least 60 % on p. 705, 50 to 60 % on p. 710.</li>
+    <li><b>Upgrade target.</b> 2·10⁻² to 10⁻²·⁵ on p. 727, but to 2·10⁻³ on p. 729. The first is not an order of magnitude.</li>
+    <li><b>Coating interval.</b> 10 to 20 years here, 10 to 30 in Chapter 15, 10 to 15 in Chapter 12.</li>
+    <li><b>Table 17.6, p. 704.</b> The year-by-year grid could not be read reliably from the scan, so the page uses the intervals stated in the text.</li>
+  </ul>
+</div>

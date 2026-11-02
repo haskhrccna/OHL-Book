@@ -1,0 +1,55 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>Fittings attach, connect and protect. Suspension and dead-end clamps hold the conductor, connectors join it, spacers keep bundles apart, and dampers take the energy out of vibration. Insulator fittings link everything to the tower and guide arcs and fields. Each fitting must not run hotter than the conductor, must not stress it where it is already most stressed, and must survive years of vibration without loosening.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">A conductor is most stressed at its clamps. A fitting costs little, but its failure drops a conductor or starts fatigue that spreads. This chapter links insulators, conductors and vibration.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Tell conductor fittings from insulator fittings</li>
+      <li>Choose a suspension clamp for a duty</li>
+      <li>Choose wedge, compression or preformed dead-ends</li>
+      <li>Plan spacer positions in a span</li>
+      <li>Apply the mechanical strength requirements</li>
+      <li>Sort fitting tests</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s10-1"><summary><span class="num">10.1</span><span class="t">Definitions</span><span class="pg">p. 305</span></summary><div class="body">
+  <div class="grid2"><div class="note"><h4>Fittings for conductors</h4><p class="small">Terminate, suspend or join: suspension and dead-end clamps, connectors, branch clamps, dampers, spacers.</p></div><div class="note"><h4>Fittings for insulator sets</h4><p class="small">Between the clamp assembly and the first detachable part at the support: yoke plates, corona rings, U-bolts, links.</p></div></div>
+</div></details>
+
+<details class="sec" open id="s10-2"><summary><span class="num">10.2</span><span class="t">Fittings for conductors</span><span class="pg">p. 305–312</span></summary><div class="body">
+  <p>Inside a clamp, four stresses overlap: tension, static bending, clamping compression and alternating bending from vibration (Fig. 10.1). A clamp should be light and pivoted so it can follow the motion, with its pivot near the conductor axis.</p>
+  <div class="fig"><h4>Suspension clamps</h4><div id="susStep"></div></div>
+  <div class="fig"><h4>Dead-end terminations</h4><div id="dedStep"></div></div>
+  <p><b>Turnbuckles</b> adjust lengths in dead-end sets. They must not be loaded by bending, and their thread needs extra partial factors. <b>Connectors</b> may be tension-proof, like compression joints, or non-tension-proof, like jumper clamps. Aluminium with copper needs a bimetal sheet, or better an Al/Cu clamp, against galvanic corrosion.</p>
+  <div class="fig"><h4>Repairing a damaged conductor</h4><div id="repCalc"></div></div>
+  <div class="fig"><h4>Spacer plan</h4><div id="spcCalc"></div><figcaption>The book's example of subspans: start 15 m from the support and grow in 5 m steps up to 70 m at midspan. Unequal subspans help against twisting. Rigid spacers hold spacing, flexible ones allow small movement, spacer dampers also dissipate energy.</figcaption></div>
+  <p><b>Stockbridge dampers</b> are a spring-mass system tuned across the wide frequency range of vortex vibration, sized with the energy balance principle. <b>Spacer dampers</b> use rubber hinges, each with as much damping as about 100 m of conductor. <b>Phase spacers</b> do not stop galloping, but greatly reduce flashovers and clashing. Spacers are not earthing points in maintenance, because hinges and insulating elements do not conduct.</p>
+</div></details>
+
+<details class="sec" open id="s10-3"><summary><span class="num">10.3</span><span class="t">Fittings for insulator sets</span><span class="pg">p. 312–313</span></summary><div class="body">
+  <div class="scroll"><table style="min-width:440px"><tr><th>Purpose</th><th>Examples</th></tr><tr><td>Attach set to support</td><td>U-bolts, hinges</td></tr><tr><td>Join insulators</td><td>Ball and socket, clevis and tongue, yoke plates</td></tr><tr><td>Field and arc control</td><td>Spark gaps, horns, rings, grading fittings</td></tr></table></div>
+  <p class="small">Sockets are secured by V or W split pins. An arc's own magnetic field guides it, and in multiple sets partial arcs should merge away from the insulators.</p>
+</div></details>
+
+<details class="sec" open id="s10-4"><summary><span class="num">10.4</span><span class="t">Rating and tests</span><span class="pg">p. 313–317</span></summary><div class="body">
+  <p>Current-carrying fittings may not exceed conductor temperature or have a higher resistance than an equal length of conductor. Current density is tolerated up to 70 A/mm² in tension-loaded and 80 A/mm² in other fittings. Non-magnetic materials cut eddy current heating.</p>
+  <div class="fig"><h4>Mechanical checks</h4><div id="mecCalc"></div><figcaption>Dead-ends and tension joints hold at least 85 % RTS. Slip resistance is 20 to 25 % RTS as used worldwide. Suspension clamps are sized on 1.35 × tension in the German rules, with at least a 1.6 partial factor on failing loads of all fittings. Protective fittings take 1.5 kN.</figcaption></div>
+  <div class="fig"><h4>Corona test voltage</h4><div id="corCalc"></div><figcaption>U<sub>test</sub> = 1.05·U<sub>s</sub>/√3, with Table 10.1's rounded values and noise limits, dB above 1 μV at 1 MHz.</figcaption></div>
+  <p class="small">Iron parts are hot-dip galvanised. Stainless steel is used for bolts, aluminium alloys for clamps and armor rods, EPDM or silicone for damping. Materials must not be prone to stress crack corrosion. Type tests prove the design, including fatigue of elastomers. Sample tests prove the batch. Routine tests are non-destructive on tension-loaded parts.</p>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Test voltage, p. 314.</b> 1.05·420/√3 = 255 kV, but "260 kV results". The value matches Table 10.1's rounding, not the formula.</li>
+    <li><b>Bosphorus conductor.</b> 1805-AL3/228-A20SA here, 1805-AL4/228-A20SA in Chapter 7.</li>
+    <li><b>Test table source, p. 317.</b> Table 10.2 cites [10.5], a suspension clamp report; it is presumably EN 61284 [10.3], but I could not confirm this.</li>
+  </ul>
+</div>

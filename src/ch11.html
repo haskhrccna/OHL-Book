@@ -1,0 +1,60 @@
+<div class="grid2">
+  <div style="display:grid;gap:10px;align-content:start">
+    <h2>The chapter in 60 seconds</h2>
+    <p>Wind makes conductors move in three main ways. Steady light wind sheds vortices and drives small, fast aeolian vibration, which fatigues strands at the clamps. Bundles behind one another in moderate wind get subspan oscillation. Ice plus strong wind gives galloping, with huge slow loops that can clash phases. Tension is the key lever for aeolian vibration: higher tension raises vibration and cuts self-damping. Dampers remove the energy. Field recorders and Miner's rule then estimate the conductor's life.</p>
+  </div>
+  <div class="note">
+    <h4>Why it matters</h4>
+    <p class="small">An hour of vibration a day adds 10⁷ to 10⁸ cycles a year. Metal fatigue at the clamp then breaks strands far below static strength. Damping systems cost little against that risk.</p>
+    <h4>After this chapter you can</h4>
+    <ul class="small">
+      <li>Tell aeolian, subspan and galloping apart</li>
+      <li>Calculate Strouhal frequency and harmonic</li>
+      <li>Convert bending amplitude to stress</li>
+      <li>Apply the H/mg safe tension limits</li>
+      <li>Estimate life with the safe border line</li>
+      <li>Choose remedies for each kind of motion</li>
+    </ul>
+  </div>
+</div>
+<div class="row"><button class="ghost" id="collapse">Collapse all sections</button></div>
+<div class="chips" id="chips"></div>
+
+<details class="sec" open id="s11-1"><summary><span class="num">11.1</span><span class="t">Overview and types of vibration</span><span class="pg">p. 322–323</span></summary><div class="body">
+  <div class="fig"><h4>Frequency and wind ranges</h4><div id="typChart"></div><figcaption>Bars show frequency on a log scale. Aeolian: 5 to 100 Hz, wind up to 5 to 10 m/s, amplitude up to one diameter. Subspan: 1 to 5 Hz, wind 4 to 18 m/s, amplitude up to half subconductor spacing. Galloping: under 1 Hz, wind 6 to 25 m/s, amplitude up to conductor sag.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s11-2"><summary><span class="num">11.2</span><span class="t">Aeolian vibrations</span><span class="pg">p. 323–342</span></summary><div class="body">
+  <p>A span behaves like a string. Bending stiffness is small, so natural frequencies are f<sub>k</sub> = (k/2a)·√(H/m<sub>c</sub>). The spectrum is so dense that vortex shedding always finds a match. Near resonance, vortices lock on to the conductor frequency.</p>
+  <div class="fig"><h4>Wind, frequency and standing waves</h4><div id="wavCalc"></div><figcaption>Equations 11.20 to 11.26 with S<sub>r</sub> = 0.185. Only wind across the conductor counts. Vortex shedding is well formed for Reynolds numbers from 500 to 20 000. The drawing shows the first loops of the wave at scale: real spans have many more.</figcaption></div>
+  <p><b>Energy balance.</b> In steady vibration, wind power in equals power lost in self-damping plus dampers: P<sub>W</sub> = P<sub>S</sub> + P<sub>D</sub>. Free-span angle ψ = 2π·A/λ is the intensity measure. Laminar air over flat land, water, snow, sand, or at great heights makes it worse; boulders, trees and buildings break it up. Light conductors reach steady vibration faster.</p>
+  <div class="fig"><h4>Amplitude to stress, Poffenberger-Swart</h4><div id="psCalc"></div><figcaption>Eq. 11.35 with x<sub>b</sub> = 89 mm, then σ = ε·E<sub>Al</sub>. E<sub>Al</sub> = 68.9 kN/mm² is what the book's factor implies. Defaults use Table 11.4: H = 60·573 N, EI = 36.5·10⁶ N·mm², d = 3.52 mm, assumed from the conductor type. They give near the 31.6 N/mm² per mm in the table.</figcaption></div>
+  <div class="fig"><h4>Life from a field recording</h4><div id="minCalc"></div><figcaption>The Cigré safe border line, Eq. 11.39, on log axes: σ = 450·N<sup>−0.2</sup> to 2·10⁷ cycles, then 263·N<sup>−0.17</sup>. Bars are Table 11.5 classes. Miner's rule sums n/N. Default reproduces about 0.0092 and 109 years. Scale the activity to see how sharply life drops.</figcaption></div>
+  <p>Fatigue test results give about 22 N/mm² at 5·10⁸ cycles, or about 300 μm/m. The usual design limit is half: <b>150 μm/m</b>. Single-layer ACSR endurance is about 22.5 N/mm². Fretting, where strands rub, starts cracks. Creep moves load to steel and improves fatigue life in composite conductors.</p>
+  <div class="fig"><h4>Safe tension without dampers, Table 11.2</h4><div id="sdtCalc"></div><figcaption>H/(m<sub>c</sub>·g) limits by terrain, Cigré. Stress σ = (H/mg)·ρ̄·g. The book considers these uneconomic against long German experience: they would cut AL3 stress from 44 to 33 N/mm². The EDS column shows EN 50341-3-4 values. Without dampers, stay low; with them, higher tensions are allowed by Fig. 11.11 using a·D/m as well.</figcaption></div>
+  <div class="fig"><h4>Damping systems</h4><div id="dmpStep"></div></div>
+  <p><b>Verifying.</b> Mobile laser stands measure from 30 to 150 m without contact. A recorder fitted to the clamp measures 89 mm from last contact, for 10 s every 15 minutes, for about 3 to 4 months, in a 16 × 16 amplitude-frequency matrix.</p>
+</div></details>
+
+<details class="sec" open id="s11-3"><summary><span class="num">11.3</span><span class="t">Subspan oscillations</span><span class="pg">p. 341–342</span></summary><div class="body">
+  <p>Leeward subconductors in the wake of windward ones get unstable. Horizontal twins are most affected, worse if twisted by 5 to 15°. Oscillation fatigues conductors near spacers, and icing makes it severe.</p>
+  <div class="fig"><h4>Bundle check</h4><div id="subCalc"></div><figcaption>Spacing to diameter over 18 for twin and triple, over 20 for quad. Spacers no more than 40 m apart, at unequal distances. Vertical twins avoid the wake altogether. Spacer dampers do not fully suppress it.</figcaption></div>
+</div></details>
+
+<details class="sec" open id="s11-4"><summary><span class="num">11.4</span><span class="t">Galloping</span><span class="pg">p. 342–344</span></summary><div class="body">
+  <p>Ice gives the conductor a lifting shape. Uplift and twist vary together, feeding a large vertical ellipse, with long axis to short axis from 6:1 to 2:1. Amplitudes of up to 12 m have been seen. Flashovers, melted conductors, damaged fittings and towers follow.</p>
+  <div class="fig"><h4>Remedies</h4><div id="galStep"></div></div>
+</div></details>
+
+<details class="sec" open id="s11-5"><summary><span class="num">11.5</span><span class="t">Short-circuit oscillations</span><span class="pg">p. 344–345</span></summary><div class="body">
+  <p>In single conductor lines, short-circuit forces are negligible, because phases are far apart and natural frequency is below 0.3 Hz. In bundles, subconductors attract strongly and clash, deforming the outer layer and causing noise and fatigue. Spacers must resist this without permanent deformation. Only subspans of 5 to 10 m would avoid clashing, which is practical in substations only. Fast clearing can avoid it even at high currents.</p>
+</div></details>
+
+<div class="flag" id="disc"><h4>Where the book disagrees with itself</h4>
+  <ul class="small">
+    <li><b>Example tension, p. 337.</b> The text gives 3 270 N for 264-AL1/34-ST1A, Figure 11.18's caption gives 13.3 kN. Only the second is realistic for that conductor.</li>
+    <li><b>Lifetime, p. 340.</b> 1/0.0092 is 109 years, printed as 110.</li>
+    <li><b>Aluminium modulus.</b> Table 11.4's factor needs about 68 to 69 kN/mm², while Table 7.5 lists 60 kN/mm².</li>
+    <li><b>Safe tension.</b> The book reports the Cigré values, then calls their consequences implausible for aluminium and alloy (33 N/mm² for both). That is a stated disagreement with the source, not a misprint.</li>
+  </ul>
+</div>
